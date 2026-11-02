@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprint bezpieczeństwa: audyt własnej apki z AI w 2 tygodnie</title>
+<meta name="description" content="Kohorta online 11–22.01.2027. Audytujesz własną apkę otwartym skillem w Claude Code lub OpenCode, czytasz raport, naprawiasz z testem. 249 zł, do 30 osób.">
+<meta property="og:title" content="Zbudowałeś apkę z AI. Naucz się sprawdzać jej bezpieczeństwo sam.">
+<meta property="og:description" content="2 tygodnie, własne repo, otwarty skill, zadania i nagrane odpowiedzi co piątek. Kohorta 11–22 stycznia 2027, 249 zł, do 30 osób.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta name="theme-color" content="#f3f5f4">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">Devince <span>· Sprint bezpieczeństwa</span></a>
+    <nav aria-label="Strona">
+      <a href="#program">Program</a>
+      <a href="#jak">Jak to działa</a>
+      <a href="#pytania">Pytania</a>
+      <a class="btn btn-sm" href="#zapis">Zapis · 249 zł</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="start">
+  <div class="wrap">
+    <h1>Zbudowałeś apkę z AI. Naucz się sprawdzać jej bezpieczeństwo sam, na własnym kodzie.</h1>
+    <div class="cols">
+    <div>
+      <p class="lede">Otwarty skill, Twoje repo, dwa moduły z zadaniami w tygodniu, Discord i moje nagrane odpowiedzi w każdy piątek. Wychodzisz z własnym raportem, listą rzeczy naprawionych z testami i nawykiem odpalania audytu po każdej większej zmianie.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#zapis" data-umami-event="cta-hero">Zapisz się za 249 zł</a>
+        <a class="btn btn-ghost" href="#program">Zobacz program</a>
+      </div>
+      <ul class="facts-line">
+        <li><strong>11–22 stycznia 2027</strong></li>
+        <li>2 tygodnie, online, bez spotkań o stałej godzinie</li>
+        <li>3–4 h tygodniowo</li>
+        <li>do 30 osób</li>
+      </ul>
+    </div>
+
+    <figure class="triage" aria-label="Przykład: znaleziska z raportu posortowane według pilności">
+      <figcaption class="triage-head"><span>raport · aplikacja testowa Ledgerly</span><span>przykład</span></figcaption>
+      <div class="triage-group">
+        <span class="bucket now">Napraw dziś</span>
+        <ul>
+          <li><span class="what">Klucz API modelu AI trafia do przeglądarki</span>
+            <span class="where">NEXT_PUBLIC_ANTHROPIC_API_KEY</span>
+            <span class="why">Każdy, kto otworzy stronę, może wydawać z Twojego konta. Przenieś wywołanie na serwer.</span></li>
+          <li><span class="what">Faktura pobierana po samym numerze</span>
+            <span class="why">Zalogowany użytkownik zobaczy faktury innej firmy. Dodaj sprawdzenie, czyja to faktura.</span></li>
+        </ul>
+      </div>
+      <div class="triage-group">
+        <span class="bucket later">W tym miesiącu</span>
+        <ul>
+          <li><span class="what">Wysyłka SMS z kodem bez limitu</span>
+            <span class="why">Nie wycieka nic, ale każde wywołanie kosztuje. Limit na numer i adres, potem captcha.</span></li>
+        </ul>
+      </div>
+      <div class="triage-group">
+        <span class="bucket ignore">Zignoruj, z powodem</span>
+        <ul>
+          <li><span class="what">Klucz analityki w kodzie frontu</span>
+            <span class="why">Ten klucz jest publiczny z założenia. Nic z nim nie zrobisz poza wysłaniem zdarzenia.</span></li>
+        </ul>
+      </div>
+      <p class="triage-foot">Tak wygląda wynik po kursie: każde znalezisko ma miejsce w kodzie, skutek i decyzję. Ledgerly to nasza aplikacja ćwiczeniowa z celowo wstawionymi błędami.</p>
+    </figure>
+    </div>
+  </div>
+</section>
+
+<section id="dlaczego">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Te apki działały. Właśnie dlatego nikt ich nie sprawdził.</h2>
+    </div>
+    <ul class="evidence">
+      <li>
+        <p class="claim">Moltbook, luty 2026. Klucz Supabase w kodzie strony i brak zabezpieczeń na poziomie bazy. Dla każdego dostępne były 1,5 mln tokenów API, 35 tys. adresów e-mail i 4 060 prywatnych rozmów.</p>
+        <p class="source">Założyciel sam pisał, że zbudował serwis bez pisania kodu. Po zgłoszeniu naprawa zajęła kilka godzin. Źródło: <a href="https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys" rel="noopener">Wiz Research, 2.02.2026</a>.</p>
+      </li>
+      <li>
+        <p class="claim">Lovable, maj 2025. Ze 1 645 sprawdzonych apek 170 pozwalało czytać cudze dane: nazwiska, telefony, klucze API i dane płatności.</p>
+        <p class="source">Przyczyna: brak reguł dostępu w bazie. Zgłoszenie dostało numer CVE-2025-48757, a Lovable odpowiedziało, że za dane odpowiada autor apki. Źródło: <a href="https://mattpalmer.io/posts/statement-on-CVE-2025-48757" rel="noopener">Matt Palmer, 29.05.2025</a>.</p>
+      </li>
+    </ul>
+    <p class="closing-line">Nie chodzi o to, że AI pisze zły kod. AI buduje to, o co prosisz, a nikt nie prosi o to, czego nie zna. Ten sprint uczy, o co prosić i jak sprawdzić, czy to dostałeś.</p>
+  </div>
+</section>
+
+<section id="dla-kogo">
+  <div class="wrap">
+    <div class="split cols">
+      <div>
+        <h2>To dla Ciebie, jeśli</h2>
+        <ul class="ticks">
+          <li>budujesz w Claude Code, Cursorze, Lovable, Bolt albo v0 i masz działającą apkę,</li>
+          <li>ma użytkowników, płatności albo klucze API z limitem na Twojej karcie, albo zaraz wystartuje,</li>
+          <li>nikt poza Tobą nie czytał tego kodu pod kątem bezpieczeństwa,</li>
+          <li>chcesz to umieć sam przy każdej następnej apce, a nie dostać jednorazowy raport.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>To nie dla Ciebie, jeśli</h2>
+        <ul class="ticks no">
+          <li>masz w zespole osobę od bezpieczeństwa i działający proces,</li>
+          <li>nie masz dostępu do repo albo nie możesz uruchomić agenta na swoim kodzie,</li>
+          <li>szukasz testu działającej apki z zewnątrz, certyfikatu albo nauki ataków.</li>
+        </ul>
+        <p class="small muted promise"><strong>Czego nie obiecuję.</strong> Nie obiecuję, że po sprincie Twoja apka będzie bezpieczna. Będziesz umiał znaleźć i naprawić to, co w kodzie da się znaleźć z agentem, z dowodem na każdą naprawę i z uczciwą listą tego, czego nie sprawdziłeś. Patrzymy w Twój kod, nie w cudze serwery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="program">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Czego się nauczysz</h2>
+      <p>Każdy moduł to nagranie, tekst i zadanie na Twoim repo. Nie na przykładowej apce, na Twojej.</p>
+    </div>
+    <ol class="program">
+      <li><span class="when">pon 11.01</span><div><h3>Uruchomienie i mapa zaufania</h3><p>Instalujesz skill w Claude Code albo OpenCode i wiesz, ile zapłacisz za przebieg, zanim go odpalisz. Rysujesz mapę swojej apki: kto wchodzi, przez co, do czego. Wybierasz trzy miejsca, od których zaczynasz, zamiast audytować wszystko.</p></div></li>
+      <li><span class="when">czw 14.01</span><div><h3>Co w raporcie jest prawdziwe</h3><p>Odróżniasz znalezisko z dowodem od fałszywego alarmu i robisz triage swoich pięciu najważniejszych: napraw dziś, w tym miesiącu, zignoruj z powodem.</p></div></li>
+      <li><span class="when">pon 18.01</span><div><h3>Twój stack i naprawa z dowodem</h3><p>Poznajesz wzorce ryzyka dla Supabase i Firebase, Next.js i Node, PHP albo Pythona i sprawdzasz dwa z nich w swoim kodzie. Naprawiasz jedną do trzech rzeczy z testem, który pada przed poprawką i przechodzi po niej.</p></div></li>
+      <li><span class="when">czw 21.01</span><div><h3>Audyt w Twoim workflow</h3><p>Odpalasz audyt tylko na zmianach od ostatniego przebiegu, za ułamek kosztu, i decydujesz, czy wpiąć go w CI.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="jak">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Jak to działa</h2>
+      <p>Bez spotkań o stałej godzinie. Materiały są nagrane, pracujesz kiedy chcesz, a pytania zbieram w jednym miejscu.</p>
+    </div>
+    <div class="week">
+      <div><p class="day">Poniedziałek i czwartek</p><p>Nowy moduł: nagranie 20–40 minut, tekst i karta zadania.</p></div>
+      <div><p class="day">Do następnego modułu</p><p>Wrzucasz zadanie do swojego wątku na Discordzie. Tabele i zrzuty, nigdy kod ani sekrety.</p></div>
+      <div><p class="day">Piątek</p><p>Nagrane odpowiedzi na pytania z wątków całej grupy.</p></div>
+    </div>
+    <div class="terms">
+      <p>Discord działa 30 dni od startu: wątek na Twoją apkę i kanał Twojego stacku. Pisemnie odpowiadam tylko na blokady techniczne, jak instalacja albo błąd skilla, w ciągu 2 dni roboczych. Resztę biorę do piątkowych odpowiedzi. To celowe: płacisz 249 zł, nie za konsultacje jeden na jeden.</p>
+      <p>Pracujesz w Claude Code albo w OpenCode z dowolnym modelem. Tokeny płacisz na swoim planie: pełny przebieg na naszych aplikacjach kosztował od 1,5 do 17 USD, a w sprincie zaczynasz od zawężonego zakresu. Liczysz 3–4 godziny tygodniowo. Grupa liczy do 30 osób, bo więcej wątków nie przeczytam raz w tygodniu.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dowod">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Narzędzie, na którym pracujesz, jest mierzone</h2>
+      <p>Skill security-audit jest otwarty (licencja MIT). Mierzę go na aplikacjach z celowo wstawionymi błędami i na prawdziwych, opublikowanych podatnościach w cudzym kodzie. Skill nie wie, czego szukać: dostaje tylko polecenie audytu.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Kod</th><th scope="col">Co było do znalezienia</th><th scope="col">Wynik</th><th scope="col">Koszt i czas</th></tr></thead>
+        <tbody>
+          <tr><td>aplikacja testowa: Next.js na Supabase i Firebase</td><td>10 wstawionych błędów, 12 pułapek</td><td class="num">10 z 10, 1 fałszywy alarm</td><td class="num">2,26 USD · 7 min</td></tr>
+          <tr><td>aplikacja testowa: Laravel, Symfony, Drupal</td><td>13 wstawionych błędów, 14 pułapek</td><td class="num">13 z 13, 1 fałszywy alarm</td><td class="num">3,59 USD · 12 min</td></tr>
+          <tr><td>aplikacja testowa: Django, FastAPI, Flask</td><td>18 wstawionych błędów, 18 pułapek</td><td class="num">18 z 18, 1 fałszywy alarm</td><td class="num">1,89 USD · 6 min</td></tr>
+          <tr><td>Ledgerly: Next.js, Drizzle, Stripe</td><td>26 wstawionych błędów, 16 pułapek</td><td class="num">25 z 26, 1 fałszywy alarm</td><td class="num">12,80 USD · 22 min</td></tr>
+          <tr><td>moduł SAML do Drupala, PHP</td><td>11 opublikowanych podatności</td><td class="num">4–5 z 11 w trzech przebiegach, krytyczna za każdym razem</td><td class="num">2,01–2,37 USD</td></tr>
+          <tr><td>fast-jwt, biblioteka npm</td><td>3 opublikowane podatności</td><td class="num">3 z 3 (przed poprawką skilla 1 z 3)</td><td class="num">2,18 USD · 6 min</td></tr>
+          <tr><td>goshs, serwer plików w Go</td><td>8 opublikowanych podatności</td><td class="num">6 z 8, obie krytyczne</td><td class="num">16,70 USD · 32 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Wyniki z października i listopada 2026, Claude Code (Opus 5.5), przy modułach z kilkoma przebiegami podaję zakres. Aplikacje testowe pisaliśmy razem z profilami skilla, więc pokazują, że profil pokrywa te klasy błędów, a nie jak model radzi sobie z nieznanym kodem. Trudniejszy test to opublikowane podatności w cudzym kodzie, a te mogły trafić do danych treningowych modelu, dlatego trafienie traktujemy jako dolną granicę. Na własnym projekcie skill dał 39 zweryfikowanych znalezisk, z których 30 zamknąłem w 26 pull requestach. Wszystkie przebiegi, też w OpenCode i Codex: <a href="https://security-audit.dev/przebiegi" rel="noopener">security-audit.dev/przebiegi</a>.</p>
+  </div>
+</section>
+
+<section id="o-mnie" class="about-sec">
+  <div class="wrap">
+    <div class="prose">
+      <h2>Kto prowadzi</h2>
+      <p>Bartek Filipiuk. W IT pracuję zawodowo od 2008 roku, przez większość tej drogi w Drupalu i PHP. Z AI programuję od 2023: najpierw kopiowanie kodu z czatu, potem Cursor i Windsurf, dziś agenci jak Claude Code i Codex. Na własnym VPS przez Coolify utrzymuję devince.dev i strony budowane z agentem.</p>
+      <p>Jestem autorem otwartego <a href="https://github.com/bartek-filipiuk/security-audit-skill" rel="noopener">skilla security-audit</a>, na którym pracujemy w sprincie. Pokazuję proces, którego używam na co dzień, razem z błędami, które po drodze się zdarzają. Od lat uczę też na <a href="https://www.youtube.com/@bartfilipiuk" rel="noopener">YouTube</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="pytania">
+  <div class="wrap cols">
+    <h2>Pytania</h2>
+    <div>
+      <details><summary>Buduję w Lovable albo Bolt i nie używam terminala. Dam radę?</summary><div><p>Tak, jeśli masz synchronizację z GitHubem. Na starcie klonujesz repo i instalujesz Claude Code albo OpenCode, krok po kroku. To jedyna część, która wymaga odrobiny samozaparcia.</p></div></details>
+      <details><summary>Czy mój kod trafia do Ciebie?</summary><div><p>Nie. Audyt odpalasz u siebie. Na Discord wrzucasz tabele i zrzuty raportu, bez kodu i bez sekretów. Kod idzie tylko do dostawcy modelu, którego sam wybierzesz, tak jak przy każdej pracy z agentem.</p></div></details>
+      <details><summary>Ile wydam na tokeny?</summary><div><p>Na naszych testach pełny przebieg kosztował od 1,5 do 17 USD, zależnie od wielkości kodu. W kursie zaczynasz od przebiegu zawężonego do najważniejszych miejsc, który kosztuje mniej, i uczysz się audytować tylko zmiany.</p></div></details>
+      <details><summary>Używam Cursora. Zadziała?</summary><div><p>Skill działa w Cursorze po kolei w jednej sesji, bez równoległych agentów i bez automatycznej naprawy. Nie mierzyłem tej ścieżki, więc nie obiecuję tych samych wyników co w Claude Code.</p></div></details>
+      <details><summary>A jak skill nic nie znajdzie?</summary><div><p>Dostajesz listę tego, co sprawdził i uznał za bezpieczne, z miejscem w kodzie. To też wynik, i uczysz się go ocenić.</p></div></details>
+      <details><summary>Nie zdążę w dwa tygodnie.</summary><div><p>Nagrania i teksty zostają na Twoim koncie przez 12 miesięcy. Discord jest otwarty 30 dni od startu kohorty.</p></div></details>
+      <details><summary>Czy dostanę fakturę?</summary><div><p>Tak. Po zakupie napisz na bartek@devince.dev z danymi do faktury.</p></div></details>
+      <details><summary>Czy nauczę się włamywać?</summary><div><p>Nie. Sprint jest defensywny: znajdujesz i naprawiasz problemy we własnym kodzie, śledząc, skąd wchodzą dane i dokąd idą. Zero exploitów i zero cudzych serwerów.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="buy" id="zapis">
+  <div class="wrap cols">
+    <div>
+      <h2>Zapisz się na kohortę 11–22 stycznia 2027</h2>
+      <ul class="included">
+        <li>4 moduły w 2 tygodnie: nagrania, teksty i karty zadań</li>
+        <li>wątek na Twoją apkę i kanał Twojego stacku na Discordzie, 30 dni</li>
+        <li>2 nagrane sesje odpowiedzi na pytania grupy</li>
+        <li>odpowiedź na blokady techniczne w 2 dni robocze</li>
+        <li>dostęp do nagrań na koncie na courses.devince.dev</li>
+      </ul>
+    </div>
+
+    <form class="checkout" method="POST" action="https://courses.devince.dev/api/courses/checkout">
+      <input type="hidden" name="slug" value="sprint-bezpieczenstwa">
+      <input type="hidden" name="locale" value="pl">
+      <p class="price tnum">249 zł<small>brutto, jedna płatność</small></p>
+      <p class="when">Kohorta 11–22.01.2027, do 30 osób.</p>
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>Akceptuję <a href="regulamin.html">Regulamin</a> i znam <a href="polityka-prywatnosci.html">Politykę prywatności</a>. Wiem, że mogę odstąpić od umowy w ciągu 14 dni od zakupu i dostać zwrot całej kwoty.</span>
+      </label>
+      <label class="consent">
+        <input type="checkbox" name="newsletter">
+        <span>Chcę dostawać maile o kolejnych edycjach i materiałach. Dobrowolne; informacje o kupionej edycji wyślę i tak.</span>
+      </label>
+      <button class="btn btn-block" type="submit" data-umami-event="cta-checkout">Przechodzę do płatności, 249 zł</button>
+      <p class="note">Płatność przez Stripe, faktura na życzenie. Po płatności dostajesz mail z dostępem do konta na courses.devince.dev, a przed startem link do Discorda. <a href="formularz-odstapienia.html">Formularz odstąpienia</a>.</p>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Bartłomiej Filipiuk Devins · NIP 596 158 99 01 · <a href="mailto:bartek@devince.dev">bartek@devince.dev</a></p>
+    <nav aria-label="Dokumenty">
+      <a href="regulamin.html">Regulamin</a>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="formularz-odstapienia.html">Formularz odstąpienia</a>
+      <a href="https://github.com/bartek-filipiuk/security-audit-skill" rel="noopener">Skill na GitHubie</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
