@@ -268,3 +268,39 @@ footer a { color: var(--ink-2); }
 .legal ol, .legal ul { padding-left: 1.3em; }
 .legal li { margin: var(--s2) 0; }
 .legal .back { display: inline-block; padding-block: 12px; margin-bottom: var(--s5); font-size: .95rem; }
+
+/* ---------- v2 (3.11.2026): review changes ---------- */
+.text-link { font-weight: 600; padding-block: 12px; }
+
+/* One inverted band: the "it happened" facts. Plain ink, no gradient or glow. */
+.band-dark { background: var(--ink); color: #e9ece9; border-top: 0; }
+.band-dark + section { border-top: 0; }
+.band-dark h2, .band-dark .evidence p.claim, .band-dark .closing-line { color: #f6f7f6; }
+.band-dark .evidence li + li { border-top-color: #2c3137; }
+.band-dark .evidence .source { color: #aab3ae; }
+.band-dark a { color: #ff9a7d; }
+.band-dark ::selection { background: #ff9a7d; color: var(--ink); }
+
+.promise { font-size: 1rem; line-height: 1.55; color: var(--ink-2); }
+.in-short { font-weight: 600; color: var(--ink); }
+td.num { font-family: var(--mono); font-size: .8rem; font-weight: 500; letter-spacing: 0; }
+
+/* Proof table on phones: every row becomes a labelled block, no sideways scroll. */
+@media (max-width: 640px) {
+  .table-scroll { overflow: visible; border: 0; background: transparent; }
+  .table-scroll thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .table-scroll tr { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s3) var(--s4); }
+  .table-scroll tr + tr { margin-top: var(--s3); }
+  .table-scroll td { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--s3); padding: var(--s1) 0; border: 0; white-space: normal; }
+  .table-scroll td::before { content: attr(data-label); font-family: var(--font); font-size: .8rem; font-weight: 600; color: var(--ink-3); }
+  .table-scroll td:first-child { font-weight: 650; }
+}
+
+/* About with portrait */
+.about { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--s6); align-items: start; }
+.portrait { width: 160px; height: 160px; border-radius: var(--radius); object-fit: cover; }
+@media (max-width: 640px) { .about { grid-template-columns: 1fr; gap: var(--s5); } .portrait { width: 120px; height: 120px; } }
+
+.guarantee { margin-top: var(--s3); font-size: .95rem; font-weight: 600; color: var(--ink); text-align: center; }
+
+@media (max-width: 640px) { .hero { padding-top: var(--s7); } .hero h1 { margin-bottom: var(--s5); } }
