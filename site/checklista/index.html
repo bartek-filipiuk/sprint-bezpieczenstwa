@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklista: zanim wypuścisz apkę z AI</title>
+<meta name="description" content="12 rzeczy, które agent AI najczęściej zostawia otwarte w apce, każda do sprawdzenia w kilka minut, plus prompt, którym Twój agent zrobi mapę bezpieczeństwa Twojego repo. Za darmo, PDF i strona.">
+<meta property="og:title" content="Checklista: zanim wypuścisz apkę z AI">
+<meta property="og:description" content="12 rzeczy do sprawdzenia w kilka minut, każda z komendą albo promptem dla Twojego agenta. Za darmo.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta name="theme-color" content="#f3f5f4">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../">Devince <span>· Sprint bezpieczeństwa</span></a>
+    <nav aria-label="Strona">
+      <a href="../#program">Sprint</a>
+      <a class="btn" href="#zapis-checklista" data-umami-event="lm-nav">Pobierz checklistę</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero lm-hero">
+  <div class="wrap two">
+    <div>
+      <h1>Zanim wypuścisz apkę z AI, sprawdź te 12 rzeczy. Każdą w kilka minut.</h1>
+      <p class="lede">Checklista rzeczy, które agent AI najczęściej zostawia otwarte: klucze w przeglądarce, cudze dane w bazie, rachunek za API bez limitu. Przy każdej masz komendę albo prompt dla swojego agenta i opis, jak wygląda problem.</p>
+      <p class="lm-plus">W środku też prompt do skopiowania: Twój agent przejdzie repo tylko czytając kod i zrobi mapę bezpieczeństwa apki.</p>
+    </div>
+
+    <form class="checkout lm-form" id="zapis-checklista" method="POST" action="https://devince.dev/api/newsletter/subscribe">
+      <input type="hidden" name="source" value="sprint-checklista">
+      <input type="hidden" name="next" value="https://security.devince.dev/checklista/sprawdz-skrzynke/">
+      <input type="hidden" name="confirmed" value="https://security.devince.dev/checklista/2203bc4952/">
+      <div class="hp" aria-hidden="true"><label>Strona www <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <h2 class="lm-form-title">Wyślę Ci checklistę na maila</h2>
+      <p class="note">Strona i PDF. Po zapisie dostaniesz mail z linkiem potwierdzającym, a kliknięcie od razu otworzy checklistę.</p>
+      <label class="lm-label" for="lm-email">Twój e-mail</label>
+      <input class="lm-input" id="lm-email" type="email" name="email" required autocomplete="email" placeholder="ty@twojaapka.pl">
+      <label class="consent">
+        <input type="checkbox" name="newsletter">
+        <span>Chcę też dostawać maile o zapisach na Sprint bezpieczeństwa i o nowych materiałach. Dobrowolne, checklistę dostaniesz i tak.</span>
+      </label>
+      <button class="btn btn-lg btn-block" type="submit" data-umami-event="lm-submit">Wyślij mi checklistę</button>
+      <p class="fine">Administratorem danych jest Bartłomiej Filipiuk Devins. Szczegóły w <a href="../polityka-prywatnosci.html">Polityce prywatności</a>. Wypiszesz się jednym kliknięciem w każdym mailu.</p>
+    </form>
+  </div>
+</section>
+
+<section class="lm-list">
+  <div class="wrap">
+    <h2 class="h-section">Co sprawdzisz</h2>
+    <ol class="lm-items">
+      <li>Nikt nie wyda pieniędzy z Twojego konta AI ani płatności</li>
+      <li>Użytkownik widzi tylko swoje dane w bazie</li>
+      <li>Zmiana numeru w adresie nie pokazuje cudzego konta</li>
+      <li>Panel admina otwiera tylko admin</li>
+      <li>Nikt nie da sobie planu premium fałszywym webhookiem</li>
+      <li>Rachunek za API nie wystrzeli przez jednego użytkownika</li>
+      <li>Plik od użytkownika nie nadpisze cudzego i nie zostanie stroną</li>
+      <li>Stare hasło nie wisi w historii repo</li>
+      <li>Biblioteki w apce nie mają znanych dziur</li>
+      <li>Treść od użytkownika i od modelu AI nie odpala skryptu</li>
+      <li>Usunięcie konta naprawdę usuwa dane</li>
+      <li>Przeglądarka pomaga Ci bronić apki</li>
+    </ol>
+    <p class="lm-cta-line"><a class="btn btn-lg" href="#zapis-checklista" data-umami-event="lm-bottom">Wyślij mi checklistę</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Bartłomiej Filipiuk Devins · NIP 596 158 99 01 · <a href="mailto:bartek@devince.dev">bartek@devince.dev</a></p>
+    <nav aria-label="Dokumenty">
+      <a href="../">Sprint bezpieczeństwa</a>
+      <a href="../polityka-prywatnosci.html">Polityka prywatności</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

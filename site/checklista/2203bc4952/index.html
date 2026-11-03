@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklista: zanim wypuścisz apkę z AI</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/site.css">
+</head>
+<body class="lm-doc">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../">Devince <span>· Sprint bezpieczeństwa</span></a>
+    <nav aria-label="Strona">
+      <a href="checklista-zanim-wypuscisz-apke-z-ai.pdf" download>PDF</a>
+      <a class="btn" href="../../#zapis" data-umami-event="lm-doc-cta">Sprint · 249 zł</a>
+    </nav>
+  </div>
+</header>
+<main class="lm-main">
+<h1>Checklista: zanim wypuścisz apkę z AI</h1>
+<p class="lm-meta">Bartek Filipiuk · security.devince.dev · wersja z listopada 2026 · <a href="checklista-zanim-wypuscisz-apke-z-ai.pdf" download>pobierz PDF</a></p>
+<section class="lm-block">
+<h2>Wstęp</h2>
+<p>12 rzeczy, które agent AI najczęściej zostawia otwarte w apce, i jak każdą sprawdzić w kilka minut. Każdy punkt to jeden konkretny zysk: mniej wycieków, mniejszy rachunek, mniej nerwów po starcie. Nie musisz znać się na bezpieczeństwie. Potrzebujesz repo i terminala albo swojego agenta.</p>
+<p>Zacznij od promptu na dole strony. Agent przejdzie Twoją apkę tylko czytając kod i zrobi mapę, od której łatwiej przejść przez listę.</p>
+</section>
+<section class="lm-item">
+<h2>Nikt nie wyda pieniędzy z Twojego konta AI ani płatności</h2>
+<p><strong>Dlaczego.</strong> Zmienna z prefiksem <code>NEXT_PUBLIC_</code>, <code>VITE_</code>, <code>EXPO_PUBLIC_</code> albo <code>REACT_APP_</code> trafia do kodu w przeglądarce. Jeśli siedzi w niej klucz do API modelu, Stripe albo Supabase z uprawnieniami serwera, każdy może go skopiować.</p>
+<p><strong>Sprawdź.</strong></p>
+<pre><code>grep -rnE "(NEXT_PUBLIC|VITE|EXPO_PUBLIC|REACT_APP)_[A-Z_]*(SECRET|KEY|TOKEN)" --include="*.env*" --include="*.ts" --include="*.tsx" --include="*.js" . | grep -v node_modules
+grep -rniE "service_role" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.env*" . | grep -v node_modules</code></pre>
+<p><strong>Problem wygląda tak.</strong> <code>NEXT_PUBLIC_OPENAI_API_KEY</code>, <code>VITE_STRIPE_SECRET_KEY</code> albo klucz <code>service_role</code> w pliku, który trafia do przeglądarki (komponent z <code>"use client"</code>, kod frontendu). Ten sam klucz w kodzie serwera albo w funkcji Edge jest w porządku. Klucz publiczny z założenia (Supabase anon, klucz publikowalny Stripe, analityka) jest w porządku.</p>
+</section>
+<section class="lm-item">
+<h2>Użytkownik widzi tylko swoje dane w bazie</h2>
+<p><strong>Dlaczego.</strong> W Supabase i Firebase przeglądarka rozmawia z bazą bezpośrednio. Bez reguł dostępu każdy zalogowany, a czasem każdy w ogóle, czyta całą tabelę. Tak wyciekły dane w 170 apkach z Lovable (Matt Palmer, 29.05.2025).</p>
+<p><strong>Sprawdź.</strong> W Supabase, w SQL Editor:</p>
+<pre><code>select tablename, rowsecurity from pg_tables where schemaname = 'public';</code></pre>
+<p>W Firebase przejrzyj <code>firestore.rules</code> i <code>storage.rules</code>.</p>
+<p><strong>Problem wygląda tak.</strong> <code>rowsecurity = false</code> przy tabeli z danymi użytkowników. Polityka z <code>using (true)</code> na tabeli z cudzymi danymi. W Firebase <code>allow read, write: if true</code> albo <code>if request.auth != null</code> bez sprawdzenia, czyj to dokument.</p>
+</section>
+<section class="lm-item">
+<h2>Zmiana numeru w adresie nie pokazuje cudzego konta</h2>
+<p><strong>Dlaczego.</strong> Agent chętnie pisze „pobierz fakturę po id”. Jeśli kod nie sprawdza, czyja to faktura, wystarczy zmienić liczbę w adresie.</p>
+<p><strong>Sprawdź.</strong> Załóż dwa konta testowe. Na pierwszym otwórz dowolny swój rekord i skopiuj adres. Wklej go na drugim koncie.</p>
+<p><strong>Problem wygląda tak.</strong> Drugie konto widzi rekord pierwszego. W kodzie zapytanie filtruje tylko po <code>id</code>, bez warunku na właściciela albo organizację.</p>
+</section>
+<section class="lm-item">
+<h2>Panel admina otwiera tylko admin</h2>
+<p><strong>Dlaczego.</strong> Ukrycie linku w menu to nie zabezpieczenie. Liczy się sprawdzenie roli po stronie serwera, w każdej trasie admina i każdym endpoincie <code>/api/admin</code>.</p>
+<p><strong>Sprawdź.</strong> Zaloguj się jako zwykły użytkownik i otwórz adresy panelu admina oraz jego endpointy. Poproś agenta: „Pokaż plik i linię, w której sprawdzasz rolę dla każdej trasy admina”.</p>
+<p><strong>Problem wygląda tak.</strong> Strona albo odpowiedź API ładuje się zwykłemu użytkownikowi. Agent nie umie wskazać linii ze sprawdzeniem roli.</p>
+</section>
+<section class="lm-item">
+<h2>Nikt nie da sobie planu premium fałszywym webhookiem</h2>
+<p><strong>Dlaczego.</strong> Endpoint webhooka płatności jest publiczny. Jeśli nie sprawdza podpisu, każdy może wysłać „płatność zakończona” i dostać płatny dostęp za darmo.</p>
+<p><strong>Sprawdź.</strong></p>
+<pre><code>grep -rlE "webhook|checkout\.session\.completed|payment_intent\.succeeded" --include="*.ts" --include="*.js" --include="*.py" --include="*.php" . | grep -v node_modules</code></pre>
+<p>W znalezionym pliku szukaj <code>constructEvent</code> (Stripe w Node), <code>construct_event</code> (Python) albo innego sprawdzenia podpisu przed odczytem treści.</p>
+<p><strong>Problem wygląda tak.</strong> Handler robi <code>await request.json()</code> i od razu nadaje plan albo zapisuje zamówienie.</p>
+</section>
+<section class="lm-item">
+<h2>Rachunek za API nie wystrzeli przez jednego użytkownika</h2>
+<p><strong>Dlaczego.</strong> SMS, maile i wywołania modelu kosztują przy każdym wywołaniu. Endpoint bez limitu to otwarty portfel.</p>
+<p><strong>Sprawdź.</strong> Poproś agenta o listę endpointów, które wysyłają SMS lub mail albo wołają model AI, i o miejsce, gdzie jest limit na użytkownika lub adres IP. Sprawdź też limit wydatków w panelu dostawcy modelu i bramki SMS.</p>
+<p><strong>Problem wygląda tak.</strong> Brak limitu w kodzie. Użytkownik sam wybiera model albo liczbę tokenów. W panelu dostawcy brak limitu miesięcznego.</p>
+</section>
+<section class="lm-item">
+<h2>Plik od użytkownika nie nadpisze cudzego i nie zostanie stroną</h2>
+<p><strong>Dlaczego.</strong> Upload bez kontroli typu, rozmiaru i ścieżki pozwala wrzucić HTML albo nadpisać plik innej osoby.</p>
+<p><strong>Sprawdź.</strong> Znajdź endpoint uploadu i sprawdź, kto wybiera nazwę i ścieżkę pliku, jakie typy są dozwolone i jaki jest limit rozmiaru. W Supabase Storage sprawdź, czy bucket z plikami użytkowników nie jest publiczny.</p>
+<p><strong>Problem wygląda tak.</strong> Ścieżka albo klucz pliku przychodzi z formularza. Brak sprawdzenia typu. Publiczny bucket z prywatnymi dokumentami.</p>
+</section>
+<section class="lm-item">
+<h2>Stare hasło nie wisi w historii repo</h2>
+<p><strong>Dlaczego.</strong> Usunięcie pliku <code>.env</code> w nowym commicie nie usuwa go z historii. Jeśli repo jest albo będzie publiczne, klucz da się wyciągnąć.</p>
+<p><strong>Sprawdź.</strong></p>
+<pre><code>git log --all --oneline -- .env .env.local .env.production</code></pre>
+<p>Dokładniej: <code>gitleaks detect</code> (narzędzie open source) na całym repo.</p>
+<p><strong>Problem wygląda tak.</strong> Jakikolwiek wynik pierwszej komendy. Wtedy zmień klucze u dostawców, samo czyszczenie historii nie wystarczy.</p>
+</section>
+<section class="lm-item">
+<h2>Biblioteki w apce nie mają znanych dziur</h2>
+<p><strong>Dlaczego.</strong> Agent instaluje to, co zna, często w starszej wersji. Znane podatności w zależnościach to najtańsza do naprawienia rzecz na tej liście.</p>
+<p><strong>Sprawdź.</strong> Zależnie od stacku:</p>
+<pre><code>npm audit --omit=dev
+pnpm audit --prod
+pip-audit
+composer audit</code></pre>
+<p><strong>Problem wygląda tak.</strong> Wpisy <code>high</code> albo <code>critical</code> w paczkach, które trafiają na produkcję.</p>
+</section>
+<section class="lm-item">
+<h2>Treść od użytkownika i od modelu AI nie odpala skryptu</h2>
+<p><strong>Dlaczego.</strong> Tekst wstawiony jako HTML może uruchomić kod u innego użytkownika. Dotyczy to też odpowiedzi modelu, jeśli model widział treść od użytkowników.</p>
+<p><strong>Sprawdź.</strong></p>
+<pre><code>grep -rnE "dangerouslySetInnerHTML|v-html|innerHTML|\{!!|\|safe|\|raw" --include="*.tsx" --include="*.jsx" --include="*.vue" --include="*.js" --include="*.html" --include="*.php" --include="*.twig" . | grep -v node_modules</code></pre>
+<p><strong>Problem wygląda tak.</strong> Wstawianie jako HTML treści, którą ktoś może wpisać: komentarz, opis, notatka, odpowiedź modelu. Bez czyszczenia biblioteką typu DOMPurify.</p>
+</section>
+<section class="lm-item">
+<h2>Usunięcie konta naprawdę usuwa dane</h2>
+<p><strong>Dlaczego.</strong> Użytkownik ma prawo do usunięcia danych. Usunięcie wiersza w bazie często zostawia pliki w storage i rekordy w innych tabelach.</p>
+<p><strong>Sprawdź.</strong> Poproś agenta: „Pokaż, co dokładnie usuwa funkcja usuwania konta: tabele, pliki, wpisy w zewnętrznych usługach”.</p>
+<p><strong>Problem wygląda tak.</strong> Pliki użytkownika zostają w buckecie. Dane zostają w tabelach bez powiązania kaskadowego albo w usłudze mailingowej.</p>
+</section>
+<section class="lm-item">
+<h2>Przeglądarka pomaga Ci bronić apki</h2>
+<p><strong>Dlaczego.</strong> Kilka nagłówków odpowiedzi blokuje całe klasy ataków bez zmiany kodu aplikacji. Zbyt szeroki CORS z ciasteczkami robi odwrotnie.</p>
+<p><strong>Sprawdź.</strong></p>
+<pre><code>curl -sI https://twoja-apka.pl | grep -iE "content-security-policy|strict-transport-security|x-frame-options|x-content-type-options|access-control-allow"</code></pre>
+<p><strong>Problem wygląda tak.</strong> Brak nagłówków <code>strict-transport-security</code> i <code>content-security-policy</code>. <code>access-control-allow-origin</code> ustawiony na adres z żądania razem z <code>access-control-allow-credentials: true</code>.</p>
+</section>
+<section class="lm-block">
+<h2>Prompt do skopiowania: mapa Twojej apki</h2>
+<p>Wklej do Claude Code, Cursora albo OpenCode w katalogu swojego repo.</p>
+<pre><code>Przejdź po tym repozytorium wyłącznie czytając pliki. Nie uruchamiaj aplikacji, testów ani skryptów, nie wysyłaj żądań do sieci i niczego nie zmieniaj.
+
+Zrób mapę bezpieczeństwa mojej apki, w pięciu częściach:
+
+1. Punkty wejścia: każda trasa strony, endpoint API, server action, webhook i zadanie w tle. Przy każdym: kto może go wywołać (każdy, zalogowany, admin, zewnętrzna usługa) i plik:linia, gdzie to jest sprawdzane. Jeśli nie widzisz sprawdzenia, napisz „nie znalazłem”.
+2. Dane: gdzie apka trzyma dane użytkowników i płatności, i jak zapytania ograniczają je do właściciela (plik:linia albo „nie znalazłem”). Jeśli jest Supabase albo Firebase, wypisz tabele i kolekcje oraz to, czy mają reguły dostępu.
+3. Sekrety: każda zmienna środowiskowa, której używa kod, z informacją, czy trafia do przeglądarki.
+4. Kosztowne akcje: wysyłka SMS, maili i wywołania modeli AI, każda z informacją o limicie albo „brak limitu”.
+5. Webhooki i uploady: czy sprawdzają podpis, typ, rozmiar i ścieżkę.
+
+Zakończ listą maksymalnie pięciu miejsc, które sprawdziłbyś najpierw, z uzasadnieniem w jednym zdaniu. Jeśli czegoś nie jesteś pewien, napisz to wprost. Nie zgaduj i nie wymyślaj ścieżek, których nie ma w repo.</code></pre>
+<p>Wynik to Twoja mapa. Najwięcej dają miejsca z „nie znalazłem”.</p>
+</section>
+<section class="lm-block">
+<h2>Na koniec</h2>
+<p>Ta lista to ręczna wersja tego, co skill security-audit robi automatycznie na całym kodzie, z dowodem przy każdym znalezisku. Chcesz przejść to na swojej apce z grupą, z kartą skanu pod swój stack i z moimi odpowiedziami? Sprint bezpieczeństwa, 11–22 stycznia 2027: security.devince.dev.</p>
+</section>
+<p class="lm-cta-line no-print"><a class="btn btn-lg" href="../../#zapis" data-umami-event="lm-doc-bottom">Zobacz Sprint bezpieczeństwa</a></p>
+</main>
+</body>
+</html>

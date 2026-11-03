@@ -255,3 +255,48 @@ footer a { color: var(--ink-2); display: inline-block; padding: 12px 0; }
 .legal th, .legal td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--line); }
 .legal thead th { font-size: .8rem; color: var(--ink-3); background: var(--paper); }
 @media (max-width: 640px) { .signup { padding: 0 0 64px; } .signup-box { border-radius: 0; padding: 56px 24px; } }
+
+/* ---------- lead magnet: checklist (3.11.2026) ---------- */
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.lm-hero .two { align-items: center; }
+.lm-plus { margin-top: 20px; max-width: 34em; font-weight: 600; }
+.lm-form { box-shadow: 0 2px 4px rgba(18,20,23,.06), 0 30px 60px -24px rgba(18,20,23,.35); }
+.lm-form-title { font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 800; }
+.lm-label { display: block; margin-top: 20px; font-size: 14px; font-weight: 700; }
+.lm-input { display: block; width: 100%; min-height: 52px; margin-top: 6px; padding: 0 14px; border: 1px solid var(--line-strong, #b9c1bd); border-radius: 10px; background: var(--surface); font: 400 17px var(--font); color: var(--ink); }
+.lm-input:focus-visible { outline: 3px solid var(--signal); outline-offset: 1px; }
+.lm-list { background: var(--surface); border-top: 1px solid var(--line); }
+.lm-items { margin: 32px 0 0; padding: 0; list-style: none; counter-reset: lm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.lm-items li { counter-increment: lm; display: flex; gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); font-weight: 600; font-size: 18px; line-height: 1.4; }
+.lm-items li::before { content: counter(lm); flex: none; width: 28px; font: 500 13px/1.9 var(--mono); color: var(--signal-ink); }
+@media (max-width: 760px) { .lm-items { grid-template-columns: 1fr; } }
+.lm-cta-line { margin-top: 40px; }
+.lm-done .lede { max-width: 34em; margin-top: 20px; }
+.lm-done .note { margin-top: 16px; color: var(--ink-3); }
+
+.lm-main { width: min(100% - 48px, 46rem); margin: 48px auto 80px; }
+.lm-main h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 850; }
+.lm-meta { margin-top: 12px; font-size: 14px; color: var(--ink-3); }
+.lm-main section { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+.lm-main section h2 { display: flex; gap: 14px; align-items: baseline; font-size: 24px; line-height: 1.25; letter-spacing: -0.02em; font-weight: 800; }
+.lm-main { counter-reset: lm-item; }
+.lm-item { counter-increment: lm-item; }
+.lm-item h2::before { content: counter(lm-item); flex: none; font: 500 14px/1 var(--mono); color: var(--signal-ink); }
+.lm-main section p { margin-top: 12px; }
+.lm-main code { font: 13px/1.5 var(--mono); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1px 5px; overflow-wrap: anywhere; }
+.lm-main pre { margin: 12px 0 0; padding: 16px; background: var(--ink); color: var(--dark-strong); border-radius: 12px; overflow-x: auto; }
+.lm-main pre code { background: transparent; border: 0; padding: 0; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media print {
+  @page { size: A4; margin: 16mm 16mm 18mm; }
+  body { background: #fff; font-size: 11pt; }
+  .top, .no-print { display: none !important; }
+  .lm-main { width: auto; margin: 0; }
+  .lm-main section { margin-top: 16pt; padding-top: 10pt; }
+  .lm-main section h2 { break-after: avoid; }
+  .lm-meta a { display: none; }
+  .lm-main pre { background: #f3f5f4; color: #121417; border: 1px solid #d5dbd8; break-inside: avoid; }
+  a { color: #121417; }
+}
+.lm-teaser { margin-top: 20px; font-size: 16px; color: var(--ink-2); }
+.lm-teaser a { font-weight: 600; }
