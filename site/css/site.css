@@ -166,6 +166,13 @@ section { padding: 96px 24px; }
   .cal-week:first-of-type { padding-top: 0; }
   .cal-slot { padding: 0 0 12px; }
 }
+.prestart { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.prestart li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.pre-when { font: 11px/1.4 var(--mono); color: var(--ink-3); }
+.prestart h3 { font-size: 17px; line-height: 1.3; font-weight: 700; margin-top: 6px; }
+.prestart p:last-child { font-size: 15px; line-height: 1.5; color: var(--ink-2); margin-top: 6px; }
+.prestart + .cal-wrap { margin-top: 12px; }
+.outcome { margin-top: 24px; font-size: 18px; max-width: 48em; }
 .rhythm { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 32px; }
 .rhythm div { border-top: 1px solid var(--ink); padding-top: 16px; }
 .rhythm strong { font-weight: 800; }

@@ -34,7 +34,7 @@
   <div class="wrap two hero-grid">
     <div>
       <h1>Zbudowałeś apkę z AI. Zanim ktoś obcy znajdzie w niej cudze dane albo Twój klucz, znajdź to sam.</h1>
-      <p class="lede">Przez dwa tygodnie audytujesz własną apkę otwartym skillem w Claude Code albo OpenCode. Uczysz się odróżniać prawdziwe znaleziska od fałszywych alarmów i naprawiasz najważniejsze z testem.</p>
+      <p class="lede">Przed startem mówisz mi, na czym stoi Twoja apka, i dostajesz kartę skanu pod swój stack. Potem przez dwa tygodnie audytujesz własny kod otwartym skillem w Claude Code albo OpenCode i naprawiasz najważniejsze z testem.</p>
       <div class="actions">
         <a class="btn btn-lg" href="#zapis" data-umami-event="cta-hero">Zapisz się za 249 zł</a>
         <a class="text-link" href="#program">Zobacz program</a>
@@ -129,9 +129,14 @@
 <section class="program" id="program">
   <div class="wrap">
     <div class="program-head">
-      <h2 class="h-section">Dwa tygodnie pracy na Twoim repo</h2>
+      <h2 class="h-section">Od pierwszego skanu do poprawek z testem w dwa tygodnie</h2>
       <p>Każdy moduł to nagranie 20–40 minut, tekst i zadanie na Twoim kodzie. Spotkań o stałej godzinie nie ma.</p>
     </div>
+    <ol class="prestart" aria-label="Przed startem">
+      <li><p class="pre-when">po zakupie</p><h3>Mówisz mi, na czym stoi Twoja apka</h3><p>Ankieta na 5 minut: stack, narzędzie, hosting, gdzie są dane i płatności, czego się boisz.</p></li>
+      <li><p class="pre-when">przed startem</p><h3>Dostajesz swoją kartę skanu</h3><p>Komenda z flagami pod Twój stack, zakres, szacowany koszt i lista ryzyk, od których zaczynasz.</p></li>
+      <li><p class="pre-when">do 8.01</p><h3>Sprawdzasz instalację</h3><p>Krótka instrukcja i jedna komenda testowa. Jeśli coś nie działa, rozwiązujemy to przed startem, a nie 11.01.</p></li>
+    </ol>
     <div class="cal-wrap" role="region" aria-label="Kalendarz kohorty" tabindex="0">
       <div class="cal">
         <div class="cal-day"></div>
@@ -142,20 +147,21 @@
         <div class="cal-day">Piątek</div>
 
         <div class="cal-week"><strong>Tydzień 1</strong><span>11–15.01</span></div>
-        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 1 · 11.01</p><h3>Uruchamiasz skill i wybierasz, od czego zacząć</h3><p>Wiesz, ile kosztuje przebieg, zanim go odpalisz. Rysujesz, kto i którędy wchodzi do Twojej apki.</p></div></div>
+        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 1 · 11.01</p><h3>Pierwszy skan Twojej apki jeszcze tego dnia</h3><p>Instalację masz sprawdzoną, więc tylko odpalasz audyt na zakresie z karty i dostajesz pierwsze znaleziska.</p></div></div>
         <div class="cal-empty">zadanie na Twoim repo</div>
         <div class="cal-empty">zadanie na Twoim repo</div>
-        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 2 · 14.01</p><h3>Czytasz raport i wiesz, co w nim jest prawdziwe</h3><p>Pięć znalezisk dzielisz na grupy: napraw dziś, w tym miesiącu albo zignoruj z powodem.</p></div></div>
-        <div class="cal-slot"><div class="mod qa"><p class="mod-when">15.01</p><h3>Nagrane odpowiedzi</h3><p>Na pytania z wątków całej grupy.</p></div></div>
+        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 2 · 14.01</p><h3>Wiesz, co naprawić dziś, co poczeka, a co zignorować</h3><p>Odróżniasz prawdziwe znalezisko od fałszywego alarmu i układasz swoją listę napraw.</p></div></div>
+        <div class="cal-slot"><div class="mod qa"><p class="mod-when">15.01</p><h3>Odpowiedzi na przypadkach z grupy</h3><p>Nagranie z Waszych pytań, bez nazw i kodu.</p></div></div>
 
         <div class="cal-week"><strong>Tydzień 2</strong><span>18–22.01</span></div>
-        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 3 · 18.01</p><h3>Sprawdzasz wzorce swojego stacku i naprawiasz z testem</h3><p>Supabase, Next.js, PHP albo Python. Test pada przed poprawką i przechodzi po niej.</p></div></div>
+        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 3 · 18.01</p><h3>Zamykasz najgroźniejsze dziury: klucze, cudze dane, rachunek za API</h3><p>Wzorce układam pod stacki grupy z ankiet. Każda naprawa ma test, który pada przed poprawką.</p></div></div>
         <div class="cal-empty">zadanie na Twoim repo</div>
         <div class="cal-empty">zadanie na Twoim repo</div>
-        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 4 · 21.01</p><h3>Odpalasz audyt tylko na zmianach, za ułamek kosztu</h3><p>Potem decydujesz, czy wpiąć go w CI.</p></div></div>
-        <div class="cal-slot"><div class="mod qa"><p class="mod-when">22.01</p><h3>Nagrane odpowiedzi</h3><p>I plan, co dalej z Twoją apką.</p></div></div>
+        <div class="cal-slot"><div class="mod"><p class="mod-when">moduł 4 · 21.01</p><h3>Audyt przy każdej większej zmianie</h3><p>Skanujesz tylko to, co się zmieniło, za ułamek kosztu pełnego przebiegu, i decydujesz o CI.</p></div></div>
+        <div class="cal-slot"><div class="mod qa"><p class="mod-when">22.01</p><h3>Odpowiedzi i plan na dalej</h3><p>Co zostało w Twojej liście i kiedy skanować następnym razem.</p></div></div>
       </div>
     </div>
+    <p class="outcome"><strong>Na koniec masz:</strong> raport swojej apki, listę napraw z testami, kartę skanu i komendę, którą odpalasz przy każdej zmianie.</p>
     <div class="rhythm">
       <div><strong>Discord przez 30 dni</strong><p>Wątek na Twoją apkę i kanał Twojego stacku. Wrzucasz tabele i zrzuty, nigdy kod ani sekrety.</p></div>
       <div><strong>Odpowiedź w 2 dni robocze</strong><p>Pisemnie odpowiadam na blokady techniczne, resztę biorę do piątkowych nagrań. Konsultacji jeden na jeden w tej cenie nie ma.</p></div>
@@ -212,11 +218,13 @@
     <div class="two faq-grid">
       <div class="faq-col">
         <details><summary>Buduję w Lovable albo Bolt, bez terminala. Dam radę?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Tak, jeśli masz synchronizację z GitHubem. Na starcie klonujesz repo i instalujesz Claude Code albo OpenCode, krok po kroku. To jedyna część, która wymaga odrobiny samozaparcia.</p></details>
-        <details><summary>Czy mój kod trafia do Ciebie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Nie. Audyt odpalasz u siebie. Na Discord wrzucasz tabele i zrzuty, bez kodu i sekretów. Kod idzie tylko do dostawcy modelu, którego sam wybierzesz.</p></details>
+        <details><summary>Czy mój kod trafia do Ciebie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Nie. Audyt odpalasz u siebie. Na Discord wrzucasz tabele i zrzuty, bez kodu i sekretów. Kod idzie tylko do dostawcy modelu, którego sam wybierzesz. Wyjątek to publiczne repo, które sam wskażesz do przebiegu przed startem.</p></details>
         <details><summary>Moja apka nie ma jeszcze użytkowników. Jest sens?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Tak, jeśli zaraz wystartuje. Najtaniej naprawia się przed pierwszym użytkownikiem, bo nie ma jeszcze czyich danych pilnować. Projekt do szuflady? Poczekaj do następnej edycji.</p></details>
         <details><summary>A jeśli po tygodniu uznam, że to nie dla mnie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Napisz jedno zdanie do 18 stycznia, oddaję całość. Niezależnie od tego masz ustawowe 14 dni od zakupu na odstąpienie od umowy.</p></details>
       </div>
       <div class="faq-col">
+        <details><summary>Mam publiczne repo. Możesz odpalić skan za mnie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Tak, jeden przebieg przed startem, na zakresie z ankiety. Przy dużym kodzie wskaż jeden katalog albo moduł, bo pełny przebieg dużego repo kosztuje kilkanaście dolarów i dłużej się go czyta. Wynik wysyłam tylko Tobie.</p></details>
+        <details><summary>Mój stack jest inny. Zadziała?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Skill ma profile dla JavaScript i TypeScript (Node, Next.js), Supabase i Firebase, PHP (Laravel, Symfony, Drupal) oraz Pythona (Django, FastAPI, Flask). Na innym stacku działa na ogólnej checkliście, bez wzorców dla Twojego frameworka. Napisz przed zakupem, jeśli nie masz pewności.</p></details>
         <details><summary>Ile wydam na tokeny?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Pełny przebieg na naszych aplikacjach kosztował 1,5–17 USD, zależnie od wielkości kodu. Zaczynasz od zawężonego zakresu, a w module 4 uczysz się audytować tylko zmiany.</p></details>
         <details><summary>Używam Cursora. Zadziała?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Skill działa w Cursorze po kolei w jednej sesji, bez równoległych agentów i bez automatycznej naprawy. Tej ścieżki nie mierzyłem, więc nie obiecuję tych samych wyników co w Claude Code.</p></details>
         <details><summary>A jak skill nic nie znajdzie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Dostajesz listę tego, co sprawdził i uznał za bezpieczne, z miejscem w kodzie. To też wynik, i w module 2 uczysz się go ocenić.</p></details>
@@ -232,7 +240,9 @@
     <div>
       <h2 class="h-section">Zapisz się na kohortę 11–22 stycznia 2027</h2>
       <ul class="incl">
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>karta skanu pod Twój stack, przed startem</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 moduły: nagrania, teksty i karty zadań</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>przy publicznym repo: jeden przebieg odpalony przeze mnie przed startem</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>wątek na Twoją apkę i kanał stacku na Discordzie, 30 dni</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2 nagrane sesje odpowiedzi na pytania grupy</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>nagrania na Twoim koncie na courses.devince.dev przez 12 miesięcy</li>
