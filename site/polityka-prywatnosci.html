@@ -52,6 +52,7 @@
 <li>Hetzner Online GmbH: hosting platformy (serwery w UE),</li>
 <li>Brevo: wysyłka e-maili transakcyjnych i, za zgodą, newslettera,</li>
 <li>Discord: komunikacja grupowa edycji,</li>
+<li>Cloudflare: ochrona formularza zapisu na checklistę przed botami (Turnstile), w zakresie adresu IP i danych technicznych przeglądarki,</li>
 <li>Scanye: fakturowanie,</li>
 <li>dostawcy narzędzi AI, z których Administrator może korzystać przy obsłudze korespondencji, w zakresie treści wiadomości,</li>
 <li>dostawca infrastruktury serwerowej własnej instancji narzędzia analitycznego Umami.</li>
@@ -59,7 +60,7 @@
 <p>Z narzędzi AI do audytu korzystasz na własnych kontach. W tym zakresie Administrator nie przekazuje im Twoich danych.</p>
 
 <h2>5. Przekazywanie danych poza EOG</h2>
-<p>Niektórzy dostawcy (Stripe, Discord, Brevo w zakresie części podprocesorów, dostawcy narzędzi AI) mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym. Przekazywanie odbywa się na podstawie mechanizmów przewidzianych w RODO, w szczególności standardowych klauzul umownych lub decyzji o adekwatności (w tym EU-US Data Privacy Framework, jeżeli dostawca jest nim objęty).</p>
+<p>Niektórzy dostawcy (Stripe, Discord, Cloudflare, Brevo w zakresie części podprocesorów, dostawcy narzędzi AI) mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym. Przekazywanie odbywa się na podstawie mechanizmów przewidzianych w RODO, w szczególności standardowych klauzul umownych lub decyzji o adekwatności (w tym EU-US Data Privacy Framework, jeżeli dostawca jest nim objęty).</p>
 
 <h2>6. Okres przechowywania</h2>
 <ul>
@@ -76,7 +77,7 @@
 <p>Podanie danych jest dobrowolne, ale niezbędne do zawarcia umowy i udziału w kursie.</p>
 
 <h2>9. Analityka i cookies</h2>
-<p>Strona może korzystać z narzędzia analitycznego Umami w celu mierzenia ruchu i skuteczności strony. Umami nie zapisuje na Twoim urządzeniu plików cookies do śledzenia i nie profiluje użytkowników; zbiera wyłącznie dane zbiorcze (odsłony, źródło wejścia, kliknięcia przycisków oznaczonych jako zdarzenia, typ urządzenia i przeglądarki). Administrator korzysta z własnej instancji Umami pod adresem stats.67projects.app, więc dane te nie trafiają do zewnętrznego dostawcy analityki. Dlatego strona nie wyświetla banera zgody na cookies. Jeżeli zakres analityki się zmieni (np. piksele reklamowe), polityka zostanie zaktualizowana, a wymagane zgody będą zbierane przed uruchomieniem takich narzędzi.</p>
+<p>Strona może korzystać z narzędzia analitycznego Umami w celu mierzenia ruchu i skuteczności strony. Umami nie zapisuje na Twoim urządzeniu plików cookies do śledzenia i nie profiluje użytkowników; zbiera wyłącznie dane zbiorcze (odsłony, źródło wejścia, kliknięcia przycisków oznaczonych jako zdarzenia, typ urządzenia i przeglądarki). Administrator korzysta z własnej instancji Umami pod adresem stats.67projects.app, więc dane te nie trafiają do zewnętrznego dostawcy analityki. Formularz zapisu na checklistę ładuje Cloudflare Turnstile, który sprawdza, czy formularz wysyła człowiek, a nie bot. Robi to na podstawie danych technicznych przeglądarki i adresu IP, bez śledzenia między stronami; podstawą jest prawnie uzasadniony interes Administratora w ochronie formularza przed nadużyciami (art. 6 ust. 1 lit. f RODO). Dlatego strona nie wyświetla banera zgody na cookies. Jeżeli zakres analityki się zmieni (np. piksele reklamowe), polityka zostanie zaktualizowana, a wymagane zgody będą zbierane przed uruchomieniem takich narzędzi.</p>
 
 <h2>10. Zautomatyzowane decyzje</h2>
 <p>Nie podejmujemy wobec Ciebie decyzji opartych wyłącznie na zautomatyzowanym przetwarzaniu, które wywoływałyby skutki prawne. Odpowiedzi i decyzje, na przykład w sprawie reklamacji albo zwrotu, podejmuje człowiek.</p>
