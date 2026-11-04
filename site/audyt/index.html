@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audyt z omówieniem: raport Twojej apki przeczytany przez człowieka</title>
+<meta name="description" content="Odpalasz audyt bezpieczeństwa otwartym skillem na swoim kodzie, a ja pisemnie mówię Ci, co w raporcie jest prawdziwe i co naprawić najpierw. Kod zostaje u Ciebie. 590 zł, miejsce w Sprincie bezpieczeństwa w cenie.">
+<meta property="og:title" content="Audyt z omówieniem: co w raporcie jest prawdziwe i co naprawić najpierw">
+<meta property="og:description" content="Karta uruchomienia pod Twój stack do 2 dni roboczych, pisemne omówienie raportu do 3 dni roboczych, sprawdzenie poprawek. 590 zł, zwrot do 7 dni po omówieniu.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta name="theme-color" content="#f3f5f4">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">Devince <span>· Audyt z omówieniem</span></a>
+    <nav aria-label="Strona">
+      <a href="#przebieg">Przebieg</a>
+      <a href="#pytania">Pytania</a>
+      <a class="btn" href="#zamow" data-umami-event="audyt-cta-nav">Zamów · 590 zł</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="start">
+  <div class="wrap two hero-grid">
+    <div>
+      <h1>Audyt bezpieczeństwa Twojej apki w ciągu kilku dni. Raport czytam ja i piszę Ci, co w nim jest prawdziwe i co naprawić najpierw.</h1>
+      <p class="lede">Po zakupie opisujesz w formularzu, na czym stoi Twoja apka. Dostajesz kartę uruchomienia pod swój stack i odpalasz otwarty skill w Claude Code albo OpenCode. Raport odsyłasz mi, a ja odpisuję, które znaleziska są prawdziwe i w jakiej kolejności je naprawić. Kod zostaje u Ciebie.</p>
+      <div class="actions">
+        <a class="btn btn-lg" href="#zamow" data-umami-event="audyt-cta-hero">Zamów za 590 zł</a>
+        <a class="text-link" href="#przebieg">Zobacz przebieg</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Start</dt><dd>w dniu zakupu</dd></div>
+        <div><dt>Omówienie</dt><dd>do 3 dni roboczych od raportu</dd></div>
+        <div><dt>W cenie</dt><dd>Sprint 11–22.01.2027</dd></div>
+        <div><dt>Zwrot</dt><dd>do 7 dni po omówieniu</dd></div>
+      </dl>
+      <p class="lm-teaser">Jeśli omówienie nie było warte 590 zł, napisz do 7 dni po jego otrzymaniu. Oddaję całość, bez pytań.</p>
+    </div>
+
+    <figure class="triage" aria-label="Przykład: fragment omówienia z kolejnością napraw">
+      <figcaption class="triage-head"><span>omówienie raportu</span><span>Ledgerly · przykład</span></figcaption>
+      <div class="group">
+        <span class="bucket now">Napraw dziś</span>
+        <div class="item">
+          <div class="what">Klucz API modelu AI trafia do przeglądarki</div>
+          <div class="where">src/lib/ai-client.ts:4 · NEXT_PUBLIC_ANTHROPIC_API_KEY</div>
+          <div class="why">Prawdziwe: każdy, kto otworzy stronę, wydaje z Twojego konta. Przenieś wywołanie na serwer i zmień klucz u dostawcy.</div>
+        </div>
+      </div>
+      <div class="group">
+        <span class="bucket later">W tym miesiącu</span>
+        <div class="item">
+          <div class="what">Wysyłka SMS z kodem bez limitu</div>
+          <div class="why">Nic nie wycieka, ale każde wywołanie kosztuje. Limit na numer i adres IP.</div>
+        </div>
+      </div>
+      <div class="group">
+        <span class="bucket ignore">Fałszywy alarm, z powodem</span>
+        <div class="item">
+          <div class="what">Klucz analityki w kodzie frontu</div>
+          <div class="why">Publiczny z założenia. Da się nim tylko wysłać zdarzenie, więc zostaw.</div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="program" id="przebieg">
+  <div class="wrap">
+    <div class="program-head">
+      <h2 class="h-section">Od zakupu do sprawdzonych poprawek</h2>
+      <p>Wszystko pisemnie, mailem. Ty decydujesz, kiedy odpalisz audyt; terminy po mojej stronie liczę od Twojej wiadomości.</p>
+    </div>
+    <ol class="prestart" aria-label="Przebieg usługi">
+      <li><p class="pre-when">w dniu zakupu</p><h3>Dostajesz start</h3><p>Instrukcję instalacji skilla, przykładową kartę i przykładowe omówienie, checklistę z promptem do mapy apki i link do formularza.</p></li>
+      <li><p class="pre-when">10 minut</p><h3>Opisujesz swoją apkę</h3><p>Osiem pytań: po co Ci audyt, stack, wielkość repo, co ma najwięcej do stracenia, narzędzie i limit kosztu.</p></li>
+      <li><p class="pre-when">do 2 dni roboczych</p><h3>Dostajesz kartę uruchomienia</h3><p>Komendę z flagami pod Twój stack, zakres dla dużego repo, szacowany koszt i listę miejsc, na które patrzę w Twoim frameworku.</p></li>
+      <li><p class="pre-when">kiedy chcesz</p><h3>Odpalasz audyt u siebie</h3><p>Skill czyta Twój kod na Twojej maszynie i zapisuje raport w katalogu repo. Odsyłasz mi raport, możesz z niego wyciąć fragmenty.</p></li>
+      <li><p class="pre-when">do 3 dni roboczych</p><h3>Dostajesz omówienie</h3><p>Które znaleziska są prawdziwe, co naprawić dziś, co poczeka, które alarmy są fałszywe i dlaczego, prompty do napraw dla Twojego agenta i czego raport nie objął.</p></li>
+      <li><p class="pre-when">przez 30 dni</p><h3>Pytasz i sprawdzamy poprawki</h3><p>Jedna wiadomość z maksymalnie 5 pytaniami do omówienia i jedno sprawdzenie poprawek na raporcie z samych zmian.</p></li>
+    </ol>
+    <p class="outcome"><strong>Na koniec masz:</strong> raport swojej apki, listę napraw ułożoną według pilności, moją ocenę raportu ze zmian, czyli czy najważniejsze znaleziska zostały zamknięte, i miejsce w styczniowym sprincie, gdzie uczysz się robić to sam.</p>
+    <div class="rhythm">
+      <div><strong>Jedno repo, jeden przebieg</strong><p>W dużym repo zaczynamy od zakresu z karty, czyli części, która ma najwięcej do stracenia, a nie od całego monorepo.</p></div>
+      <div><strong>Pisemnie, bez rozmów</strong><p>Dlatego taka cena. Szkic omówienia przygotowuje model AI (Claude) na moim koncie, a ja go sprawdzam, poprawiam i podpisuję.</p></div>
+      <div><strong>Tokeny na Twoim planie</strong><p>Claude Code albo OpenCode z wybranym modelem. Pełny przebieg w naszych testach kosztował 1,5–17 USD, a karta mówi, ile wyjdzie u Ciebie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dla-kogo">
+  <div class="wrap two who-grid">
+    <div class="panel panel-white">
+      <h2>To dla Ciebie, jeśli</h2>
+      <ul class="checks">
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4361a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Twoja apka ma już użytkowników, płatności albo klucze API na Twojej karcie</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4361a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>albo rusza przed styczniem i nie chcesz czekać na sprint</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4361a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>chcesz, żeby ktoś z doświadczeniem przeczytał wynik, zanim zaczniesz naprawiać</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4361a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>budujesz w JavaScript lub TypeScript (Node, Next.js), na Supabase lub Firebase, w PHP (Laravel, Symfony, Drupal) albo w Pythonie (Django, FastAPI, Flask)</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4361a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>masz repo i możesz uruchomić na nim Claude Code albo OpenCode</span></li>
+      </ul>
+    </div>
+    <div class="panel panel-line">
+      <h2>To nie dla Ciebie, jeśli</h2>
+      <ul class="checks no">
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b646e" stroke-width="2.5" stroke-linecap="round"><path d="M6 12h12"/></svg><span>Twój stack jest inny niż powyżej. Napisz przed zakupem, sprawdzę, co da się zrobić</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b646e" stroke-width="2.5" stroke-linecap="round"><path d="M6 12h12"/></svg><span>chcesz rozmowy na żywo albo poprawek wprowadzonych w Twoim kodzie przeze mnie</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b646e" stroke-width="2.5" stroke-linecap="round"><path d="M6 12h12"/></svg><span>szukasz testu działającej apki z zewnątrz albo certyfikatu dla klienta</span></li>
+        <li><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b646e" stroke-width="2.5" stroke-linecap="round"><path d="M6 12h12"/></svg><span>możesz poczekać do stycznia i wolisz uczyć się w grupie: <a href="../" data-umami-event="audyt-to-sprint">Sprint bezpieczeństwa za 249 zł</a></span></li>
+      </ul>
+      <p class="promise"><strong>Czego nie obiecuję.</strong> Że po omówieniu apka będzie bezpieczna. Omówienie to moja ocena raportu, bez dostępu do Twojego kodu. Przy każdym znalezisku raport podaje plik i linię, a ja piszę, czy to realny problem. Dostajesz też listę tego, czego audyt nie sprawdził.</p>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="dowod">
+  <div class="wrap">
+    <h2 class="h-section">Skill, którym robisz audyt, ma zmierzone wyniki</h2>
+    <p class="proof-lead">Na czterech aplikacjach z celowo wstawionymi błędami skill znalazł 66 z 67. Na opublikowanych podatnościach w cudzym kodzie, bez podpowiedzi, od 4 z 11 do 3 z 3.</p>
+    <div class="two proof-grid">
+      <div>
+        <h3>Aplikacje testowe z wstawionymi błędami</h3>
+        <p class="proof-sub">Pisaliśmy je razem z profilami skilla. Pokazują, że profil pokrywa te klasy błędów, a nie jak model radzi sobie z nieznanym kodem.</p>
+        <ul class="bars">
+          <li><div class="bar-top"><span>Next.js na Supabase i Firebase</span><span>10/10 · 2,26 USD</span></div><div class="track"><div class="fill w100"></div></div></li>
+          <li><div class="bar-top"><span>Laravel, Symfony, Drupal</span><span>13/13 · 3,59 USD</span></div><div class="track"><div class="fill w100"></div></div></li>
+          <li><div class="bar-top"><span>Django, FastAPI, Flask</span><span>18/18 · 1,89 USD</span></div><div class="track"><div class="fill w100"></div></div></li>
+          <li><div class="bar-top"><span>Ledgerly: Next.js, Drizzle, Stripe</span><span>25/26 · 12,80 USD</span></div><div class="track"><div class="fill w96"></div></div></li>
+        </ul>
+        <p class="proof-foot">W każdej z czterech skill raz uznał za błąd miejsce, które jest bezpieczne. Takie alarmy wskazuję w omówieniu.</p>
+      </div>
+      <div>
+        <h3>Opublikowane podatności w cudzym kodzie</h3>
+        <p class="proof-sub">Trudniejszy test. Te podatności mogły trafić do danych treningowych modelu, więc wynik to dolna granica.</p>
+        <ul class="bars">
+          <li><div class="bar-top"><span>fast-jwt, biblioteka npm</span><span>3/3 · 2,18 USD</span></div><div class="track"><div class="fill ink w100"></div></div></li>
+          <li><div class="bar-top"><span>goshs, serwer plików w Go</span><span>6/8 · 16,70 USD</span></div><div class="track"><div class="fill ink w75"></div></div></li>
+          <li><div class="bar-top"><span>moduł SAML do Drupala</span><span>4–5/11 · 2,01–2,37 USD</span></div><div class="track"><div class="fill ink w36"></div><div class="fill range w9"></div></div></li>
+        </ul>
+        <p class="proof-foot">goshs: obie krytyczne podatności trafione. SAML: trzy przebiegi, krytyczna trafiona w każdym, stąd zakres.</p>
+      </div>
+    </div>
+    <p class="proof-note">Claude Code (Opus 5.5), październik i listopad 2026. Skill nie wie, czego szukać: dostaje tylko polecenie audytu. Wszystkie przebiegi, też w OpenCode i Codex: <a href="https://security-audit.dev/przebiegi" rel="noopener">security-audit.dev/przebiegi</a>. Na moim własnym kodzie ten skill znalazł 39 zweryfikowanych problemów, 30 zamknąłem w 26 pull requestach.</p>
+  </div>
+</section>
+
+<section id="o-mnie">
+  <div class="wrap two about-grid">
+    <img class="portrait" src="../media/bartek.webp" width="320" height="320" alt="Bartek Filipiuk" loading="lazy">
+    <div>
+      <h2>Omówienie piszę ja, Bartek Filipiuk</h2>
+      <p>W IT pracuję zawodowo od 2008 roku, przez większość tej drogi w Drupalu i PHP. Z AI programuję od 2023: najpierw kopiowanie kodu z czatu, potem Cursor i Windsurf, dziś agenci jak Claude Code i Codex. Na własnym VPS przez Coolify utrzymuję devince.dev i strony budowane z agentem.</p>
+      <p>Jestem autorem otwartego <a href="https://github.com/bartek-filipiuk/security-audit-skill" rel="noopener">skilla security-audit</a>, którym robisz audyt. Możesz go sprawdzić przed zakupem: płacisz za kartę pod swój stack i za przeczytanie wyniku, nie za narzędzie. Od lat uczę też na <a href="https://www.youtube.com/@bartfilipiuk" rel="noopener">YouTube</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="pytania">
+  <div class="wrap">
+    <h2 class="h-section">Pytania</h2>
+    <div class="two faq-grid">
+      <div class="faq-col">
+        <details><summary>Czym to się różni od Sprintu bezpieczeństwa?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Sprint startuje 11 stycznia i uczy w grupie, a raport czytasz w nim sam. Tu zaczynasz od razu, a raport czytam ja i piszę Ci omówienie. Miejsce w sprincie masz w cenie, więc w styczniu uczysz się robić to sam przy następnych zmianach.</p></details>
+        <details><summary>Czy mój kod trafia do Ciebie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Nie. Audyt odpalasz u siebie, a mnie wysyłasz tylko raport. Raport zawiera ścieżki plików i krótkie fragmenty kodu, więc możesz je wyciąć; zostaw tylko listę tego, czego audyt nie ocenił, bo bez niej omówienie będzie niepełne. Szkic omówienia robi model AI (Claude) na moim koncie, więc raport trafia też do Anthropic. Raport usuwam 60 dni po zakończeniu usługi.</p></details>
+        <details><summary>Ile to trwa w sumie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Karta do 2 dni roboczych od formularza, omówienie do 3 dni roboczych od raportu. Najszybciej: formularz w dniu zakupu i audyt w dniu otrzymania karty, wtedy omówienie masz około 5 dni roboczych od zakupu. Raport wysyłasz do 45 dni od zakupu, a pytania i sprawdzenie poprawek masz przez 30 dni od omówienia.</p></details>
+        <details><summary>A jeśli nie będę zadowolony?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Napisz do 7 dni od otrzymania omówienia, oddaję całość bez pytań. Jeśli w 60 dni od zakupu nie dostaniesz omówienia, bo nie wysłałeś raportu albo ja nie zdążyłem, też oddaję całość. Niezależnie od tego masz ustawowe 14 dni od zakupu na odstąpienie od umowy.</p></details>
+        <details><summary>Mój stack jest inny. Zadziała?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Na innym stacku skill działa na ogólnej checkliście, bez wzorców dla Twojego frameworka, i wtedy omówienie jest słabsze. Napisz na bartek@devince.dev przed zakupem, odpowiem, czy w Twoim przypadku to ma sens.</p></details>
+      </div>
+      <div class="faq-col">
+        <details><summary>Ile wydam na tokeny?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Pełny przebieg w naszych testach kosztował 1,5–17 USD, zależnie od wielkości kodu. W formularzu podajesz swój limit, a karta ustawia zakres tak, żeby się w nim zmieścić.</p></details>
+        <details><summary>A jak skill nic nie znajdzie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Dostajesz listę tego, co sprawdził i uznał za bezpieczne, z miejscem w kodzie, a ode mnie ocenę, czego nie objął i co warto sprawdzić osobno. Taki wynik też się przydaje: wiesz, co zostało sprawdzone.</p></details>
+        <details><summary>Dlaczego nie ma rozmowy na żywo?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Bo wtedy ta cena nie miałaby sensu. Pisemne omówienie możesz przeczytać kilka razy i wkleić swojemu agentowi.</p></details>
+        <details><summary>Po omówieniu chcę, żebyś to naprawił. Da się?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Napisz, wycenię naprawy osobno, na podstawie Twojego raportu.</p></details>
+        <details><summary>Czy dostanę fakturę?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Tak. Po zakupie napisz na bartek@devince.dev z danymi do faktury.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="zamow">
+  <div class="wrap signup-box">
+    <div>
+      <h2 class="h-section">Zamów audyt z omówieniem</h2>
+      <ul class="incl">
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>start w dniu zakupu: instrukcja, przykłady, checklista, formularz</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>karta uruchomienia pod Twój stack, do 2 dni roboczych</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>pisemne omówienie raportu, do 3 dni roboczych</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>do 5 pytań i jedno sprawdzenie poprawek przez 30 dni</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>miejsce w Sprincie bezpieczeństwa 11–22.01.2027</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>zwrot do 7 dni po omówieniu, bez podawania przyczyny</li>
+      </ul>
+    </div>
+    <form class="checkout" method="POST" action="https://courses.devince.dev/api/courses/checkout">
+      <input type="hidden" name="slug" value="audyt-z-omowieniem">
+      <input type="hidden" name="locale" value="pl">
+      <p class="price"><strong>590 zł</strong><span>brutto, jedna płatność</span></p>
+      <p class="note">Ręczny audyt kodu w Polsce zaczyna się od około 4 800 zł.</p>
+      <p class="note">Tokeny za audyt płacisz na swoim planie. Pełny przebieg w naszych testach kosztował 1,5–17 USD.</p>
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>Akceptuję <a href="../regulamin.html#audyt">Regulamin</a> i znam <a href="../polityka-prywatnosci.html">Politykę prywatności</a>. Wiem, że mogę odstąpić od umowy w ciągu 14 dni od zakupu, a niezależnie od tego poprosić o zwrot całej kwoty do 7 dni od otrzymania omówienia.</span>
+      </label>
+      <label class="consent">
+        <input type="checkbox" name="newsletter">
+        <span>Chcę dostawać maile o nowych materiałach i edycjach sprintu. Dobrowolne; wszystko o zamówionej usłudze wyślę i tak.</span>
+      </label>
+      <button class="btn btn-lg btn-block" type="submit" data-umami-event="audyt-cta-checkout">Przechodzę do płatności, 590 zł</button>
+      <p class="guarantee">Jeśli omówienie nie było warte tej kwoty, napisz, a oddam całość.</p>
+      <p class="fine">Płatność przez Stripe, faktura na życzenie. Po płatności dostajesz mail z dostępem do konta na courses.devince.dev, a w nim start i link do formularza. <a href="../formularz-odstapienia.html">Formularz odstąpienia</a></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Bartłomiej Filipiuk Devins · NIP 596 158 99 01 · <a href="mailto:bartek@devince.dev">bartek@devince.dev</a></p>
+    <nav aria-label="Dokumenty">
+      <a href="../">Sprint bezpieczeństwa</a>
+      <a href="../checklista/">Darmowa checklista</a>
+      <a href="../regulamin.html#audyt">Regulamin</a>
+      <a href="../polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="https://github.com/bartek-filipiuk/security-audit-skill" rel="noopener">Skill na GitHubie</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

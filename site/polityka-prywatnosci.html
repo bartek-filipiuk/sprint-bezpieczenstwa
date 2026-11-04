@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Polityka prywatności: Sprint bezpieczeństwa</title>
+<title>Polityka prywatności: Sprint bezpieczeństwa i Audyt z omówieniem</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/site.css">
@@ -11,8 +11,8 @@
 <body class="legal">
 <main>
 <a class="back" href="./">Wróć na stronę sprintu</a>
-<h1>Polityka prywatności: kurs „Sprint bezpieczeństwa”</h1>
-<p>Obowiązuje od dnia: 2.11.2026.</p>
+<h1>Polityka prywatności: kurs „Sprint bezpieczeństwa” i usługa „Audyt z omówieniem”</h1>
+<p>Obowiązuje od dnia: 2.11.2026. Zmieniona z dniem [DATA PUBLIKACJI]: dodano usługę „Audyt z omówieniem” (formularz przygotowania, raport, użycie narzędzia AI przy projekcie omówienia, Google jako odbiorca).</p>
 
 <h2>1. Administrator danych</h2>
 <p>Administratorem Twoich danych osobowych jest Bartłomiej Filipiuk Devins (marka Devince), NIP: 596 158 99 01, adres: ul. Stacyjna 1, 53-613 Wrocław. Kontakt w sprawach danych osobowych: bartek@devince.dev.</p>
@@ -24,10 +24,11 @@
 <li>dane konta na platformie kursowej courses.devince.dev (e-mail, historia zakupów, postępy w programie); zakup wiąże się z automatycznym założeniem konta na adres e-mail podany przy zakupie,</li>
 <li>odpowiedzi z ankiety po zakupie (narzędzia, stack, hosting, obawy) służące przygotowaniu karty skanu i dopasowaniu kolejności materiałów,</li>
 <li>link do publicznego repozytorium, jeśli zgłosisz je do przebiegu przed startem, oraz wynik tego przebiegu, który przekazujemy wyłącznie Tobie,</li>
+<li>przy usłudze „Audyt z omówieniem”: odpowiedzi z formularza przygotowania (cel audytu, stack, wielkość repozytorium, miejsca o największym ryzyku, narzędzie, limit kosztu, komenda testów, link do repozytorium, jeśli jest publiczne, i lista zależności, jeśli ją wkleisz) oraz raport z audytu, który sam przesyłasz e-mailem; raport może zawierać ścieżki plików i fragmenty kodu, o których treści decydujesz,</li>
 <li>treści komunikacji (e-mail, Discord: wątek uczestnika i kanały edycji),</li>
 <li>podstawowe dane techniczne i statystyczne dotyczące korzystania ze strony (patrz sekcja Analityka).</li>
 </ul>
-<p>Nie przetwarzamy kodu źródłowego Twojej aplikacji. Audyt uruchamiasz na własnym komputerze, a na Discord przekazujesz wyłącznie wybrane przez siebie tabele i zrzuty bez kodu, sekretów i danych osobowych użytkowników.</p>
+<p>Nie przetwarzamy kodu źródłowego Twojej aplikacji poza fragmentami, które sam zostawisz w przesłanym raporcie. Audyt uruchamiasz na własnym komputerze, a na Discord przekazujesz wyłącznie wybrane przez siebie tabele i zrzuty bez kodu, sekretów i danych osobowych użytkowników.</p>
 
 <h2>3. Cele i podstawy prawne przetwarzania</h2>
 <div class="table-scroll">
@@ -35,6 +36,7 @@
 <thead><tr><th scope="col">Cel</th><th scope="col">Podstawa prawna (RODO)</th></tr></thead>
 <tbody>
 <tr><td>Zawarcie i wykonanie umowy udziału w kursie (konto na platformie, dostęp do materiałów, Discord, odpowiedzi na pytania)</td><td>art. 6 ust. 1 lit. b</td></tr>
+<tr><td>Wykonanie usługi „Audyt z omówieniem” (karta uruchomienia, omówienie raportu, odpowiedzi na pytania, ocena poprawek), w tym przygotowanie projektu omówienia z użyciem narzędzia AI</td><td>art. 6 ust. 1 lit. b</td></tr>
 <tr><td>Obsługa płatności i zwrotów</td><td>art. 6 ust. 1 lit. b i c</td></tr>
 <tr><td>Obowiązki podatkowe i księgowe</td><td>art. 6 ust. 1 lit. c</td></tr>
 <tr><td>Reklamacje i odstąpienia od umowy</td><td>art. 6 ust. 1 lit. b i c</td></tr>
@@ -54,18 +56,20 @@
 <li>Discord: komunikacja grupowa edycji,</li>
 <li>Cloudflare: ochrona formularza zapisu na checklistę przed botami (Turnstile), w zakresie adresu IP i danych technicznych przeglądarki,</li>
 <li>Scanye: fakturowanie,</li>
-<li>dostawcy narzędzi AI, z których Administrator może korzystać przy obsłudze korespondencji, w zakresie treści wiadomości,</li>
+<li>Google: formularz przygotowania (Google Forms) i skrzynka e-mail, w której przechowywane są przesłane raporty,</li>
+<li>dostawcy narzędzi AI (Anthropic), z których Administrator korzysta przy obsłudze korespondencji i przygotowaniu projektu omówienia raportu, w zakresie treści wiadomości i raportu,</li>
 <li>dostawca infrastruktury serwerowej własnej instancji narzędzia analitycznego Umami.</li>
 </ul>
 <p>Z narzędzi AI do audytu korzystasz na własnych kontach. W tym zakresie Administrator nie przekazuje im Twoich danych.</p>
 
 <h2>5. Przekazywanie danych poza EOG</h2>
-<p>Niektórzy dostawcy (Stripe, Discord, Cloudflare, Brevo w zakresie części podprocesorów, dostawcy narzędzi AI) mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym. Przekazywanie odbywa się na podstawie mechanizmów przewidzianych w RODO, w szczególności standardowych klauzul umownych lub decyzji o adekwatności (w tym EU-US Data Privacy Framework, jeżeli dostawca jest nim objęty).</p>
+<p>Niektórzy dostawcy (Stripe, Discord, Cloudflare, Google, Brevo w zakresie części podprocesorów, dostawcy narzędzi AI) mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym. Przekazywanie odbywa się na podstawie mechanizmów przewidzianych w RODO, w szczególności standardowych klauzul umownych lub decyzji o adekwatności (w tym EU-US Data Privacy Framework, jeżeli dostawca jest nim objęty).</p>
 
 <h2>6. Okres przechowywania</h2>
 <ul>
 <li>dane umowne i konto: przez czas wykonywania umowy oraz do upływu terminów przedawnienia roszczeń,</li>
 <li>dane rozliczeniowe: 5 lat, licząc od końca roku podatkowego,</li>
+<li>raport z usługi „Audyt z omówieniem” i odpowiedzi z formularza przygotowania: 60 dni od zakończenia usługi,</li>
 <li>dane newslettera: do wycofania zgody,</li>
 <li>logi zgód: przez okres niezbędny do wykazania zgodności z prawem.</li>
 </ul>
