@@ -13,6 +13,7 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../css/site.css">
+<script defer src="https://stats.67projects.app/ascii.js" data-website-id="b5f7da77-02c9-419d-afe4-8e0501709261" data-domains="security.devince.dev"></script>
 </head>
 <body>
 
@@ -127,30 +128,7 @@
 <section class="proof" id="dowod">
   <div class="wrap">
     <h2 class="h-section">Skill, którym robisz audyt, ma zmierzone wyniki</h2>
-    <p class="proof-lead">Na czterech aplikacjach z celowo wstawionymi błędami skill znalazł 66 z 67. Na opublikowanych podatnościach w cudzym kodzie, bez podpowiedzi, od 4 z 11 do 3 z 3.</p>
-    <div class="two proof-grid">
-      <div>
-        <h3>Aplikacje testowe z wstawionymi błędami</h3>
-        <p class="proof-sub">Pisaliśmy je razem z profilami skilla. Pokazują, że profil pokrywa te klasy błędów, a nie jak model radzi sobie z nieznanym kodem.</p>
-        <ul class="bars">
-          <li><div class="bar-top"><span>Next.js na Supabase i Firebase</span><span>10/10 · 2,26 USD</span></div><div class="track"><div class="fill w100"></div></div></li>
-          <li><div class="bar-top"><span>Laravel, Symfony, Drupal</span><span>13/13 · 3,59 USD</span></div><div class="track"><div class="fill w100"></div></div></li>
-          <li><div class="bar-top"><span>Django, FastAPI, Flask</span><span>18/18 · 1,89 USD</span></div><div class="track"><div class="fill w100"></div></div></li>
-          <li><div class="bar-top"><span>Ledgerly: Next.js, Drizzle, Stripe</span><span>25/26 · 12,80 USD</span></div><div class="track"><div class="fill w96"></div></div></li>
-        </ul>
-        <p class="proof-foot">W każdej z czterech skill raz uznał za błąd miejsce, które jest bezpieczne. Takie alarmy wskazuję w omówieniu.</p>
-      </div>
-      <div>
-        <h3>Opublikowane podatności w cudzym kodzie</h3>
-        <p class="proof-sub">Trudniejszy test. Te podatności mogły trafić do danych treningowych modelu, więc to nie dowód, że skill znalazłby je pierwszy.</p>
-        <ul class="bars">
-          <li><div class="bar-top"><span>fast-jwt, biblioteka npm</span><span>3/3 · 2,18 USD</span></div><div class="track"><div class="fill ink w100"></div></div></li>
-          <li><div class="bar-top"><span>goshs, serwer plików w Go</span><span>6/8 · 16,70 USD</span></div><div class="track"><div class="fill ink w75"></div></div></li>
-          <li><div class="bar-top"><span>moduł SAML do Drupala</span><span>4–5/11 · 2,01–2,37 USD</span></div><div class="track"><div class="fill ink w36"></div><div class="fill range w9"></div></div></li>
-        </ul>
-        <p class="proof-foot">goshs: obie krytyczne podatności trafione. SAML: trzy przebiegi, krytyczna trafiona w każdym, stąd zakres. fast-jwt: 3/3 po poprawce skilla z 2.11 (jeden przebieg), przed nią 1/3.</p>
-      </div>
-    </div>
+    <p class="proof-lead">Na czterech aplikacjach z celowo wstawionymi błędami skill znalazł 66 z 67. Na opublikowanych podatnościach w cudzym kodzie, bez podpowiedzi, od 4 z 11 do 3 z 3. Na każdej aplikacji testowej skill raz uznał za błąd bezpieczne miejsce; takie alarmy wskazuję w omówieniu.</p>
     <p class="proof-note">Claude Code (Opus 5.5), październik i listopad 2026. Skill nie wie, czego szukać: dostaje tylko polecenie audytu. Wszystkie przebiegi, też w OpenCode i Codex: <a href="https://security-audit.dev/przebiegi" rel="noopener">security-audit.dev/przebiegi</a>. Na moim własnym kodzie ten skill znalazł 39 zweryfikowanych problemów, 30 zamknąłem w 26 pull requestach.</p>
   </div>
 </section>
