@@ -46,6 +46,7 @@
         <div><dt>Zwrot</dt><dd>do 18.01, bez pytań</dd></div>
       </dl>
       <p class="lm-teaser">Najpierw chcesz sprawdzić sam? <a href="checklista/" data-umami-event="lm-hero">Darmowa checklista: 12 rzeczy do sprawdzenia przed startem apki</a></p>
+      <p class="lm-teaser">Nie chcesz czekać do stycznia? Odpalasz audyt teraz, a raport czytam ja i odpisuję, co naprawić najpierw. 590 zł, miejsce w sprincie w cenie. <a href="audyt/" data-umami-event="audyt-from-sprint">Audyt z omówieniem</a></p>
     </div>
 
     <figure class="triage" aria-label="Przykład: znaleziska z raportu posortowane według pilności">
@@ -189,13 +190,13 @@
       </div>
       <div>
         <h3>Opublikowane podatności w cudzym kodzie</h3>
-        <p class="proof-sub">Trudniejszy test. Te podatności mogły trafić do danych treningowych modelu, więc wynik to dolna granica.</p>
+        <p class="proof-sub">Trudniejszy test. Te podatności mogły trafić do danych treningowych modelu, więc to nie dowód, że skill znalazłby je pierwszy.</p>
         <ul class="bars">
           <li><div class="bar-top"><span>fast-jwt, biblioteka npm</span><span>3/3 · 2,18 USD</span></div><div class="track"><div class="fill ink w100"></div></div></li>
           <li><div class="bar-top"><span>goshs, serwer plików w Go</span><span>6/8 · 16,70 USD</span></div><div class="track"><div class="fill ink w75"></div></div></li>
           <li><div class="bar-top"><span>moduł SAML do Drupala</span><span>4–5/11 · 2,01–2,37 USD</span></div><div class="track"><div class="fill ink w36"></div><div class="fill range w9"></div></div></li>
         </ul>
-        <p class="proof-foot">goshs: obie krytyczne podatności trafione. SAML: trzy przebiegi, krytyczna trafiona w każdym, stąd zakres.</p>
+        <p class="proof-foot">goshs: obie krytyczne podatności trafione. SAML: trzy przebiegi, krytyczna trafiona w każdym, stąd zakres. fast-jwt: 3/3 po poprawce skilla z 2.11 (jeden przebieg), przed nią 1/3.</p>
       </div>
     </div>
     <p class="proof-note">Claude Code (Opus 5.5), październik i listopad 2026. Skill nie wie, czego szukać: dostaje tylko polecenie audytu. Wszystkie przebiegi, też w OpenCode i Codex: <a href="https://security-audit.dev/przebiegi" rel="noopener">security-audit.dev/przebiegi</a></p>

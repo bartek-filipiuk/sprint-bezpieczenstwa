@@ -32,7 +32,7 @@
 <section class="hero" id="start">
   <div class="wrap two hero-grid">
     <div>
-      <h1>Audyt bezpieczeństwa Twojej apki w ciągu kilku dni. Raport czytam ja i piszę Ci, co w nim jest prawdziwe i co naprawić najpierw.</h1>
+      <h1>Odpalasz audyt bezpieczeństwa swojej apki jeszcze w tym tygodniu. Raport czytam ja i piszę Ci, co w nim jest prawdziwe i co naprawić najpierw.</h1>
       <p class="lede">Po zakupie opisujesz w formularzu, na czym stoi Twoja apka. Dostajesz kartę uruchomienia pod swój stack i odpalasz otwarty skill w Claude Code albo OpenCode. Raport odsyłasz mi, a ja odpisuję, które znaleziska są prawdziwe i w jakiej kolejności je naprawić. Kod zostaje u Ciebie.</p>
       <div class="actions">
         <a class="btn btn-lg" href="#zamow" data-umami-event="audyt-cta-hero">Zamów za 590 zł</a>
@@ -45,6 +45,7 @@
         <div><dt>Zwrot</dt><dd>do 7 dni po omówieniu</dd></div>
       </dl>
       <p class="lm-teaser">Jeśli omówienie nie było warte 590 zł, napisz do 7 dni po jego otrzymaniu. Oddaję całość, bez pytań.</p>
+      <p class="lm-teaser">Zobacz, co dostaniesz: <a href="przyklad/" data-umami-event="audyt-przyklad-hero">przykładowa karta i całe omówienie na aplikacji testowej</a></p>
     </div>
 
     <figure class="triage" aria-label="Przykład: fragment omówienia z kolejnością napraw">
@@ -141,13 +142,13 @@
       </div>
       <div>
         <h3>Opublikowane podatności w cudzym kodzie</h3>
-        <p class="proof-sub">Trudniejszy test. Te podatności mogły trafić do danych treningowych modelu, więc wynik to dolna granica.</p>
+        <p class="proof-sub">Trudniejszy test. Te podatności mogły trafić do danych treningowych modelu, więc to nie dowód, że skill znalazłby je pierwszy.</p>
         <ul class="bars">
           <li><div class="bar-top"><span>fast-jwt, biblioteka npm</span><span>3/3 · 2,18 USD</span></div><div class="track"><div class="fill ink w100"></div></div></li>
           <li><div class="bar-top"><span>goshs, serwer plików w Go</span><span>6/8 · 16,70 USD</span></div><div class="track"><div class="fill ink w75"></div></div></li>
           <li><div class="bar-top"><span>moduł SAML do Drupala</span><span>4–5/11 · 2,01–2,37 USD</span></div><div class="track"><div class="fill ink w36"></div><div class="fill range w9"></div></div></li>
         </ul>
-        <p class="proof-foot">goshs: obie krytyczne podatności trafione. SAML: trzy przebiegi, krytyczna trafiona w każdym, stąd zakres.</p>
+        <p class="proof-foot">goshs: obie krytyczne podatności trafione. SAML: trzy przebiegi, krytyczna trafiona w każdym, stąd zakres. fast-jwt: 3/3 po poprawce skilla z 2.11 (jeden przebieg), przed nią 1/3.</p>
       </div>
     </div>
     <p class="proof-note">Claude Code (Opus 5.5), październik i listopad 2026. Skill nie wie, czego szukać: dostaje tylko polecenie audytu. Wszystkie przebiegi, też w OpenCode i Codex: <a href="https://security-audit.dev/przebiegi" rel="noopener">security-audit.dev/przebiegi</a>. Na moim własnym kodzie ten skill znalazł 39 zweryfikowanych problemów, 30 zamknąłem w 26 pull requestach.</p>
@@ -170,7 +171,7 @@
     <h2 class="h-section">Pytania</h2>
     <div class="two faq-grid">
       <div class="faq-col">
-        <details><summary>Czym to się różni od Sprintu bezpieczeństwa?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Sprint startuje 11 stycznia i uczy w grupie, a raport czytasz w nim sam. Tu zaczynasz od razu, a raport czytam ja i piszę Ci omówienie. Miejsce w sprincie masz w cenie, więc w styczniu uczysz się robić to sam przy następnych zmianach.</p></details>
+        <details><summary>Czym to się różni od Sprintu bezpieczeństwa?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Kartę pod swój stack dostajesz w obu. Sprint startuje 11 stycznia i uczy w grupie, a raport czytasz w nim sam. Tu zaczynasz od razu, a raport czytam ja i piszę Ci omówienie. Miejsce w sprincie masz w cenie, więc w styczniu uczysz się robić to sam przy następnych zmianach.</p></details>
         <details><summary>Czy mój kod trafia do Ciebie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Nie. Audyt odpalasz u siebie, a mnie wysyłasz tylko raport. Raport zawiera ścieżki plików i krótkie fragmenty kodu, więc możesz je wyciąć; zostaw tylko listę tego, czego audyt nie ocenił, bo bez niej omówienie będzie niepełne. Szkic omówienia robi model AI (Claude) na moim koncie, więc raport trafia też do Anthropic. Raport usuwam 60 dni po zakończeniu usługi.</p></details>
         <details><summary>Ile to trwa w sumie?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Karta do 2 dni roboczych od formularza, omówienie do 3 dni roboczych od raportu. Najszybciej: formularz w dniu zakupu i audyt w dniu otrzymania karty, wtedy omówienie masz około 5 dni roboczych od zakupu. Na wysłanie raportu masz 30 dni od zakupu, a na pytania i sprawdzenie poprawek 30 dni od omówienia.</p></details>
         <details><summary>A jeśli nie będę zadowolony?<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3c444d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary><p>Napisz do 7 dni od otrzymania omówienia, oddaję całość bez pytań. Zanim wyślesz raport, możesz zrezygnować w ciągu 30 dni od zakupu, też za zwrotem całości. Jeśli spóźnię się z kartą albo omówieniem, również możesz poprosić o zwrot. Niezależnie od tego masz ustawowe 14 dni od zakupu na odstąpienie od umowy.</p></details>
@@ -204,7 +205,7 @@
       <input type="hidden" name="slug" value="audyt-z-omowieniem">
       <input type="hidden" name="locale" value="pl">
       <p class="price"><strong>590 zł</strong><span>brutto, jedna płatność</span></p>
-      <p class="note">Ręczny audyt kodu w Polsce zaczyna się od około 4 800 zł.</p>
+      <p class="note">To nie jest ręczny audyt kodu. Najtańsza publiczna oferta takiego audytu, jaką znalazłem w Polsce, zaczyna się od 4 800 zł. Tu płacisz za kartę pod swój stack i przeczytanie raportu.</p>
       <p class="note">Audyt odpalasz na swoim planie. Na subskrypcji zużywa limit planu; przez API pełny przebieg w naszych testach kosztował 1,5–18 USD.</p>
       <label class="consent">
         <input type="checkbox" name="consent" required>
