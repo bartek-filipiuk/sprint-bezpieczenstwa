@@ -34,7 +34,7 @@
 
 <p class="part-label"><a href="../">Audyt z omówieniem</a> · przykład</p>
 <h1>Tak wygląda karta uruchomienia i omówienie raportu</h1>
-<p class="lede">Trzy dokumenty w kolejności, w jakiej powstają: Twoje odpowiedzi z formularza, karta uruchomienia, którą dostajesz ode mnie, i omówienie raportu, które piszę po audycie.</p>
+<p class="lede">Raport z audytu ma 40 znalezisk, w tym 2 oznaczone jako krytyczne. Z omówienia wiesz, że dziś naprawiasz 16, jedno krytyczne może poczekać do końca miesiąca, jedno to prawdopodobnie fałszywy alarm, a zależności nikt nie sprawdził. Poniżej trzy dokumenty w kolejności, w jakiej powstają: Twój formularz, karta uruchomienia i omówienie.</p>
 
 <p class="sample-note"><strong>To jest przykład.</strong> Audyt odpaliliśmy na Ledgerly, naszej aplikacji testowej z celowo wstawionymi błędami, a odpowiedzi z formularza wymyśliliśmy na potrzeby przykładu. Raport, ścieżki plików i numery linii są prawdziwe, z przebiegu z 2 listopada 2026.</p>
 
@@ -96,7 +96,7 @@
 
     <h4>2. Przed startem (5 minut)</h4>
     <ul>
-      <li>Claude Code przez API, limit 20 USD. Szacowany koszt tego przebiegu: 11,71–18 USD, czas 22–32 minuty. Podstawa: nasze pełne przebiegi Claude Code z Opus 5.5 na naszej aplikacji testowej z tym samym stackiem (Next.js, Drizzle) i podobnej wielkości, w październiku i listopadzie 2026: 11,71 USD i 32 minuty, 12,80 USD i 22 minuty, 18 USD.</li>
+      <li>Claude Code przez API, limit 20 USD. Szacowany koszt tego przebiegu: 11,71–18 USD, czas około 32 minut. Podstawa: dwa pełne przebiegi Claude Code z Opus 5.5 na naszej aplikacji testowej z tym samym stackiem (Next.js, Drizzle) i podobnej wielkości, w październiku 2026: 11,71 USD i 32 minuty oraz 18 USD.</li>
       <li>Node 20 lub nowszy, repo sklonowane lokalnie, gałąź <code>main</code>, czyste drzewo (<code>git status</code> nic nie pokazuje).</li>
       <li>Instalacja skilla:
 <pre><code>git clone https://github.com/bartek-filipiuk/security-audit-skill ~/.claude/skills/security-audit</code></pre></li>
@@ -109,7 +109,7 @@
     <p>W katalogu repo, w świeżej sesji Claude Code:</p>
 <pre><code>/security-audit --stack js</code></pre>
     <p>Dlaczego tak: bez <code>--scope</code>, bo 90 plików to małe repo i pełny przebieg mieści się w Twoim limicie 20 USD. <code>--stack js</code> tylko przypina profil; skill i tak wykryłby go z <code>package.json</code>.</p>
-    <p>Czas: zwykle 20–35 minut. Skill pokazuje postęp. Nie przerywaj w fazie weryfikacji.</p>
+    <p>Czas: około 32 minut. Skill pokazuje postęp. Nie przerywaj w fazie weryfikacji.</p>
 
     <h4>4. Jeśli coś pójdzie nie tak</h4>
     <ul>
@@ -119,7 +119,7 @@
     </ul>
 
     <h4>5. Co wysłać do omówienia</h4>
-    <p>Plik <code>.security-audit/report.md</code>, w odpowiedzi na tego maila. Raport zawiera ścieżki plików i fragmenty kodu. Zanim wyślesz, przejrzyj go i wytnij, czego nie chcesz pokazywać, ale bez haseł, kluczy i danych Twoich użytkowników. Nie wycinaj sekcji „Not Assessed”: bez niej nie powiem Ci, czego audyt nie sprawdził.</p>
+    <p>Plik <code>.security-audit/report.md</code>, w odpowiedzi na tego maila. Raport zawiera ścieżki plików i fragmenty kodu. Zanim wyślesz, usuń hasła, klucze i dane Twoich użytkowników (to obowiązkowe) i wytnij fragmenty kodu, których nie chcesz pokazywać. Nie wycinaj sekcji „Not Assessed”: bez niej nie powiem Ci, czego audyt nie sprawdził.</p>
     <p>Omówienie dostaniesz do 3 dni roboczych od raportu.</p>
     <p class="sign">Bartek</p>
   </article>
@@ -129,14 +129,14 @@
 <section class="part" id="omowienie" aria-labelledby="omowienie-h">
   <p class="part-label">Krok 3 · do 3 dni roboczych od raportu</p>
   <h2 id="omowienie-h">Omówienie raportu</h2>
-  <p class="part-intro">To główna część usługi. Nie przepisuję raportu, tylko go oceniam: które znaleziska są prawdziwe, w jakiej kolejności je naprawić, które są fałszywe i czego raport nie sprawdził. Każde znalezisko ma plik i linię z raportu.</p>
+  <p class="part-intro">To główna część usługi. Raport układa znaleziska według wagi, ja według tego, co wiem o Twojej apce z formularza. W tym przykładzie znalezisko krytyczne (config-301) spadło na „w tym miesiącu”, bo repo jest prywatne, średnie (exposure-101) trafiło na dziś, bo otwiera oba łańcuchy, a jedno (rate-limit-408) to prawdopodobnie fałszywy alarm. Każde znalezisko ma plik i linię z raportu.</p>
 
   <article class="paper">
     <h3>Omówienie audytu: Ledgerly</h3>
-    <p class="meta">4.11.2026. Raport z przebiegu 2.11.2026 (commit <code>a03d8d4</code>), skill security-audit, profil JavaScript/TypeScript (Node), całe repo bez <code>--scope</code>, koszt 12,80 USD i 22 minuty. Przygotował Bartek Filipiuk na podstawie raportu, bez dostępu do kodu.</p>
+    <p class="meta">4.11.2026. Raport z przebiegu 2.11.2026 (commit <code>a03d8d4</code>), skill security-audit, profil JavaScript/TypeScript (Node), całe repo bez <code>--scope</code>, koszt 12,80 USD i 22 minuty. Szkic przygotował model AI (Claude), sprawdził, poprawił i podpisał Bartek Filipiuk. Na podstawie raportu, bez dostępu do kodu.</p>
 
     <h4>1. W jednym akapicie</h4>
-    <p>Raport ma 40 znalezisk. 38 uznaję za prawdziwe, jedno za fałszywy alarm, a jednego nie rozstrzygnę bez Twojej odpowiedzi. Na dziś zostawiam 16 znalezisk w czterech paczkach: sekrety, które już są poza Twoją kontrolą, i dziury, które wykorzysta ktoś z darmowym kontem, a część nawet bez konta. Zacznij od wymiany kluczy, to kwestia minut, potem webhook Stripe. Najgroźniej w raporcie wygląda workflow podglądów pull requestów (oznaczony jako krytyczny), ale przy prywatnym repo to robota na ten miesiąc, nie na dziś. Audyt nie sprawdził zależności i nie uruchomił ani jednego testu, więc każda poprawka zaczyna się od testu, który ma paść. W tym tygodniu: paczki A–D poniżej, w tej kolejności.</p>
+    <p>Raport ma 40 znalezisk. 38 uznaję za prawdziwe, jedno za prawdopodobnie fałszywy alarm, a jednego nie rozstrzygnę bez Twojej odpowiedzi. Na dziś zostawiam 16 znalezisk w czterech paczkach: sekrety, które już są poza Twoją kontrolą, i dziury, które wykorzysta ktoś z darmowym kontem, a część nawet bez konta. Zacznij od wymiany kluczy, to kwestia minut, potem webhook Stripe. Najgroźniej w raporcie wygląda workflow podglądów pull requestów (oznaczony jako krytyczny), ale przy prywatnym repo to robota na ten miesiąc, nie na dziś. Audyt nie sprawdził zależności i nie uruchomił ani jednego testu, więc każda poprawka zaczyna się od testu, który ma paść. W tym tygodniu: paczki A–D poniżej, w tej kolejności.</p>
 
     <h4>2. Napraw dziś</h4>
     <p class="small">Klucz do tej sekcji: sekrety i kod, które już są poza Twoją kontrolą, oraz błędy, które wykorzysta ktoś bez konta albo z darmowym kontem, bez udziału ofiary. Skutek: cudze dane, Twoje pieniądze albo uprawnienia admina. Kolejność paczek: A, B, C, D. Każda paczka ma prompt dla Twojego agenta; wklej go w świeżej sesji w katalogu repo.</p>
@@ -167,7 +167,7 @@
 
       <details>
         <summary>Prompt naprawy dla agenta (paczka A)<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9e2a12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-<pre class="wrap-text"><code>Naprawiamy trzy znaleziska z .security-audit/report.md, w tej kolejności. Klucze u dostawców już wymieniłem, Ty zajmij się kodem. Przy każdym punkcie najpierw test, potem poprawka.
+<pre class="wrap-text"><code>Naprawiamy trzy znaleziska z .security-audit/report.md, w tej kolejności. Klucze u dostawców już wymieniłem, Ty zajmij się kodem. Przy punktach 1 i 2 najpierw test, potem poprawka.
 
 1. exposure-305, src/lib/ai-client.ts:3-6. Przenieś .security-audit/tests/exposure-305.browser-key.test.ts do testów projektu i uruchom pnpm test. Test MUSI paść na obecnym kodzie; jeśli przechodzi, popraw test, nie kod. Potem usuń src/lib/ai-client.ts i NEXT_PUBLIC_ANTHROPIC_API_KEY z .env.example, a podpowiedź przypomnienia z src/components/assistant-panel.tsx przenieś do server action za requireOrg(), która używa serwerowego ANTHROPIC_API_KEY. Uruchom pnpm test: nowy test przechodzi.
 
@@ -338,6 +338,8 @@ Nie zmieniaj niczego poza tymi miejscami. Jeśli poprawka wymaga zmiany gdzie in
       <li><div class="what">business-logic-101: dowolne przejścia statusu faktury</div><div class="where">src/app/(app)/invoices/actions.ts:19-27</div><p>W obrębie własnej organizacji. Naprawa: warunek na obecny status w tym samym zapytaniu.</p></li>
       <li><div class="what">injection-213: przekierowanie po logowaniu da się wyprowadzić poza domenę</div><div class="where">src/components/login-form.tsx:18-19</div><p>Pomaga w phishingu, nic nie wycieka. Naprawa: porównanie origin przez new URL.</p></li>
     </ul>
+    <p class="small">Prompt do każdego znaleziska z tej sekcji, po jednym naraz:</p>
+<pre class="wrap-text"><code>Naprawiamy &lt;id&gt; z .security-audit/report.md. Jeśli w .security-audit/tests/ jest test dla tego id, przenieś go do testów projektu; jeśli nie, napisz test, który pokazuje błąd. Uruchom pnpm test: test MUSI paść na obecnym kodzie; jeśli przechodzi, popraw test, nie kod. Potem poprawka według „How to fix” z raportu, pnpm test na zielono, pokaż diff.</code></pre>
 
     <h4>4. Zignoruj albo zaakceptuj świadomie</h4>
     <ul class="rows">
@@ -360,7 +362,7 @@ Nie zmieniaj niczego poza tymi miejscami. Jeśli poprawka wymaga zmiany gdzie in
     <h4>6. Czego audyt nie objął</h4>
     <ul>
       <li><strong>Zależności.</strong> osv-scanner i docker były niedostępne, a zapasowy <code>pnpm audit</code> się wysypał. „No vulnerable packages reported” znaczy tu „nie sprawdzono”, nie „czysto”. Puść <code>osv-scanner</code> na <code>pnpm-lock.yaml</code> jeszcze w tym tygodniu, to kilka minut.</li>
-      <li><strong>Testy.</strong> Żaden test nie został uruchomiony: nie było <code>node_modules</code>, a skill celowo nie instalował zależności, bo instalacja uruchomiłaby skrypt z config-302. Wszystkie znaleziska potwierdzono czytaniem kodu. Dlatego każdy prompt wyżej zaczyna się od testu, który ma paść.</li>
+      <li><strong>Testy.</strong> Żaden test nie został uruchomiony: nie było <code>node_modules</code>, a skill celowo nie instalował zależności, bo instalacja uruchomiłaby skrypt z config-302. Wszystkie znaleziska potwierdzono czytaniem kodu. Dlatego prompty wyżej zaczynają się od testu, który ma paść, wszędzie tam, gdzie da się go napisać.</li>
       <li><strong>Skanery reguł.</strong> semgrep, zizmor, hadolint i trivy nie ruszyły. Workflowy i Dockerfile czytał tylko model. Warto dorobić po paczce A.</li>
       <li><strong>Kod bibliotek.</strong> Które endpointy pluginu organizacji w Better-Auth wymagają jakiej roli, czy ciasteczko sesji ma HttpOnly i jak tRPC traktuje content-type przy żądaniach z innej strony: raport nie mógł tego przeczytać. Ciasteczko sprawdzisz w devtools po zalogowaniu.</li>
       <li><strong>Infrastruktura.</strong> Polityka bucketu R2, nagłówki i HSTS dodawane przez hosting, kopie zapasowe, logi wysyłek w Resend. Sekcja „Production checklist” w raporcie mówi, jak sprawdzić każdą z tych rzeczy u siebie.</li>
@@ -378,14 +380,15 @@ Nie zmieniaj niczego poza tymi miejscami. Jeśli poprawka wymaga zmiany gdzie in
     </ol>
 
     <h4>9. Co dalej</h4>
-    <p>Na Twoim miejscu zrobiłbym w tym tygodniu paczki A–D, puścił osv-scanner i przysłał mi raport z <code>--since last</code>: sprawdzę, czy znaleziska z sekcji „Napraw dziś” są zamknięte. Jeśli chcesz, żebym wziął paczkę D i wpiął bramkę w CI u Ciebie, odpisz, wycenię po tym raporcie.</p>
+    <p>Na Twoim miejscu zrobiłbym w tym tygodniu paczki A–D, puścił osv-scanner i przysłał mi raport z <code>--since last</code>: sprawdzę, czy znaleziska z sekcji „Napraw dziś” są zamknięte. Jeśli chcesz, żebym wziął paczkę D i wpiął bramkę w CI u Ciebie, odpisz, wycenię po tym raporcie. Na raport z poprawkami masz 30 dni; w tym czasie możesz też przysłać jedną wiadomość z maksymalnie 5 pytaniami.</p>
     <p class="sign">Bartek</p>
   </article>
 </section>
 
 <section class="report-link" aria-labelledby="raport-h">
-  <h2 id="raport-h">Pełny raport, z którego powstało to omówienie</h2>
-  <p>40 znalezisk z kodem i przepływem danych, 30 miejsc potwierdzonych jako bezpieczne i 19 rzeczy, których audyt nie ocenił. Raport jest po angielsku, tak jak go zapisuje skill.</p>
+  <h2 id="raport-h">To samo dla Twojego repo</h2>
+  <p>Raport z tego przykładu to 40 znalezisk po angielsku. Omówienie to cztery paczki na ten tydzień z gotowymi promptami. Za 590 zł dostajesz kartę do 2 dni roboczych, omówienie do 3 dni roboczych od raportu, potem do 5 pytań i jedno sprawdzenie poprawek. Jeśli omówienie nie było warte tej kwoty, piszesz do 7 dni i oddaję całość.</p>
+  <p>Pełny raport, z którego powstało to omówienie (40 znalezisk, 30 miejsc potwierdzonych jako bezpieczne, 19 rzeczy, których audyt nie ocenił):</p>
   <p><a href="https://security-audit.dev/raporty/ledgerly.html" rel="noopener">security-audit.dev/raporty/ledgerly.html</a></p>
   <div class="actions">
     <a class="btn btn-lg" href="../#zamow" data-umami-event="audyt-przyklad-cta-bottom">Zamów audyt z omówieniem · 590 zł</a>
