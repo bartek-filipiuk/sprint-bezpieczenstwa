@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Przykład: karta uruchomienia i omówienie raportu · Audyt z omówieniem</title>
+<meta name="description" content="Pełny przykład usługi Audyt z omówieniem na aplikacji testowej Ledgerly: odpowiedzi z formularza, karta uruchomienia z komendą i kosztem oraz pisemne omówienie raportu z kolejnością napraw i promptami dla agenta.">
+<meta property="og:title" content="Przykład: karta uruchomienia i omówienie raportu">
+<meta property="og:description" content="Formularz, karta uruchomienia i omówienie raportu na aplikacji testowej z celowo wstawionymi błędami. Tak wygląda to, co dostajesz za 590 zł.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta name="theme-color" content="#f3f5f4">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/site.css">
+<link rel="stylesheet" href="przyklad.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../">Devince <span>· Audyt z omówieniem</span></a>
+    <nav aria-label="Strona">
+      <a href="../">Oferta</a>
+      <a href="#karta">Karta</a>
+      <a href="#omowienie">Omówienie</a>
+      <a class="btn" href="../#zamow" data-umami-event="audyt-przyklad-cta-nav">Zamów · 590 zł</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+
+<p class="part-label"><a href="../">Audyt z omówieniem</a> · przykład</p>
+<h1>Tak wygląda karta uruchomienia i omówienie raportu</h1>
+<p class="lede">Trzy dokumenty w kolejności, w jakiej powstają: Twoje odpowiedzi z formularza, karta uruchomienia, którą dostajesz ode mnie, i omówienie raportu, które piszę po audycie.</p>
+
+<p class="sample-note"><strong>To jest przykład.</strong> Audyt odpaliliśmy na Ledgerly, naszej aplikacji testowej z celowo wstawionymi błędami, a odpowiedzi z formularza wymyśliliśmy na potrzeby przykładu. Raport, ścieżki plików i numery linii są prawdziwe, z przebiegu z 2 listopada 2026.</p>
+
+<ol class="toc">
+  <li><a href="#formularz">1. Formularz klienta</a> <span>· co wpisujesz po zakupie</span></li>
+  <li><a href="#karta">2. Karta uruchomienia</a> <span>· komenda, zakres, koszt</span></li>
+  <li><a href="#omowienie">3. Omówienie raportu</a> <span>· co prawdziwe, co naprawić najpierw</span></li>
+  <li><a href="https://security-audit.dev/raporty/ledgerly.html" rel="noopener">Pełny raport z audytu</a> <span>· 40 znalezisk, na security-audit.dev</span></li>
+</ol>
+
+<!-- 1. FORMULARZ -->
+<section class="part" id="formularz" aria-labelledby="formularz-h">
+  <p class="part-label">Krok 1 · 10 minut po zakupie</p>
+  <h2 id="formularz-h">Formularz klienta (przykład)</h2>
+  <p class="part-intro">Pytania są te same, które dostaniesz po zakupie. Odpowiedzi wymyśliliśmy pod prawdziwy stack Ledgerly z jego <code>package.json</code>.</p>
+
+  <div class="paper">
+    <dl class="qa">
+      <div><dt>1. Po co Ci ten audyt i co zrobisz z wynikiem?</dt><dd>Za miesiąc włączamy płatne plany. Pierwszy większy klient, biuro rachunkowe, pyta, jak chronimy dane jego klientów. Chcę wiedzieć, co naprawić przed startem, i mieć coś konkretnego do pokazania temu klientowi.</dd></div>
+      <div><dt>2a. Na czym stoi Twoja apka?</dt><dd>JavaScript / TypeScript (Node, Next.js)</dd></div>
+      <div><dt>2b. Framework, baza, logowanie i hosting w dwóch zdaniach</dt><dd>Next.js 16 (App Router) z tRPC i Hono, Postgres przez Drizzle, logowanie Better-Auth z organizacjami, płatności Stripe, pliki w R2, asystent AI na Anthropic przez AI SDK. Produkcja jako obraz Dockera, podglądy pull requestów na Vercelu, zadania w tle na pg-boss.</dd></div>
+      <div><dt>3a. Ile plików ma repo? (<code>git ls-files | wc -l</code>)</dt><dd>90</dd></div>
+      <div><dt>3b. Czy to monorepo?</dt><dd>Nie</dd></div>
+      <div><dt>4. Co w Twojej apce ma najwięcej do stracenia? Wybierz do 3.</dt><dd>Płatności · Dane innych użytkowników · Funkcje AI (klucze, koszty)</dd></div>
+      <div><dt>5a. Narzędzie i model</dt><dd>Claude Code przez API, Opus 5.5</dd></div>
+      <div><dt>5b. Ile maksymalnie chcesz wydać na jeden przebieg (USD)?</dt><dd>20</dd></div>
+      <div><dt>6. Komenda, którą odpalasz testy</dt><dd><code>pnpm test</code></dd></div>
+      <div><dt>7a. Repo jest</dt><dd>Prywatne</dd></div>
+      <div><dt>8. Kiedy odpalisz audyt?</dt><dd>W tym tygodniu</dd></div>
+      <div><dt>Opcjonalnie: lista zależności</dt><dd><code>next 16.3.0</code>, <code>better-auth 1.6.27</code>, <code>drizzle-orm 0.45.2</code>, <code>@trpc/server 11.8.0</code>, <code>hono 4.12.25</code>, <code>stripe 22.3.1</code>, <code>ai 6.0.40</code>, <code>@ai-sdk/anthropic 3.0.12</code>, <code>pg-boss 10.1.0</code>, <code>@aws-sdk/client-s3 3.890.0</code>, <code>resend 6.1.0</code>, <code>svix 1.76.1</code>, <code>zod 4.1.5</code> i 10 innych</dd></div>
+    </dl>
+  </div>
+  <p class="aside"><strong>Poza przykładem:</strong> liczbę plików zmierzyliśmy naprawdę. <code>git ls-files</code> na katalogu aplikacji testowej daje 90, tyle samo co zliczenie plików bez <code>node_modules</code>.</p>
+</section>
+
+<!-- 2. KARTA -->
+<section class="part" id="karta" aria-labelledby="karta-h">
+  <p class="part-label">Krok 2 · do 2 dni roboczych od formularza</p>
+  <h2 id="karta-h">Karta uruchomienia</h2>
+  <p class="part-intro">Dostajesz ją mailem. Mówi, jaką komendę wpisać, dlaczego z tymi flagami, ile to mniej więcej kosztuje i co mi potem odesłać.</p>
+
+  <article class="paper">
+    <h3>Karta uruchomienia: Ledgerly</h3>
+    <p class="meta">31.10.2026. Przygotowana na podstawie Twojego formularza z 30.10.2026. Jeśli coś się nie zgadza, odpisz na tego maila, zanim odpalisz audyt.</p>
+
+    <h4>1. Co sprawdzimy i dlaczego</h4>
+    <p>Z formularza: za miesiąc startują płatne plany, a klient pyta, jak chronicie dane jego klientów. Dlatego w omówieniu najpierw dostaniesz listę rzeczy do naprawy przed startem, ułożoną według pilności, a osobno to, co raport potwierdził jako bezpieczne, z miejscem w kodzie, do rozmowy z tym klientem.</p>
+    <p>Twój stack: Next.js 16 (App Router), tRPC i Hono, Postgres z Drizzle, Better-Auth z organizacjami, Stripe, AI SDK z Anthropic, pg-boss. Profil skilla: JavaScript/TypeScript (Node), flaga <code>--stack js</code>. Ten profil zna wszystkie te biblioteki. Czego nie pokrywa: skanery reguł (semgrep dla kodu, zizmor dla workflowów GitHuba, hadolint i trivy dla Dockerfile) działają tylko wtedy, gdy masz je zainstalowane albo działa docker. Bez nich raport wpisze je jako niewykonane, a workflowy i Dockerfile zostaną przeczytane tylko przez model.</p>
+    <p>Na co szczególnie patrzymy w Twoim stacku:</p>
+    <ul>
+      <li>server actions (<code>"use server"</code>) i route handlery, które biorą id z requestu i nie sprawdzają, czy rekord należy do organizacji zalogowanego użytkownika;</li>
+      <li>ścieżki, których nie obejmuje matcher w <code>proxy.ts</code>: sprawdzenie logowania tylko w layoucie albo na stronie nie chroni <code>/api</code>;</li>
+      <li>webhook Stripe: czy podpis jest sprawdzany, zanim cokolwiek zapisze się w bazie;</li>
+      <li>Better-Auth: dodatkowe pola użytkownika (np. rola), które da się ustawić przy rejestracji, i ustawienia ciasteczek sesji;</li>
+      <li>narzędzia asystenta AI: czy model może sam wybrać organizację, czy narzędzia, które coś zmieniają, wymagają potwierdzenia, i czy model oraz limit tokenów ustawia serwer, a nie request;</li>
+      <li>zmienne z prefiksem <code>NEXT_PUBLIC_</code>, które trafiają do przeglądarki.</li>
+    </ul>
+    <p>Priorytet według Twojej odpowiedzi na pytanie 4: płatności, dane innych użytkowników, funkcje AI.</p>
+
+    <h4>2. Przed startem (5 minut)</h4>
+    <ul>
+      <li>Claude Code przez API, limit 20 USD. Szacowany koszt tego przebiegu: 11,71–18 USD, czas 22–32 minuty. Podstawa: nasze pełne przebiegi Claude Code z Opus 5.5 na naszej aplikacji testowej z tym samym stackiem (Next.js, Drizzle) i podobnej wielkości, w październiku i listopadzie 2026: 11,71 USD i 32 minuty, 12,80 USD i 22 minuty, 18 USD.</li>
+      <li>Node 20 lub nowszy, repo sklonowane lokalnie, gałąź <code>main</code>, czyste drzewo (<code>git status</code> nic nie pokazuje).</li>
+      <li>Instalacja skilla:
+<pre><code>git clone https://github.com/bartek-filipiuk/security-audit-skill ~/.claude/skills/security-audit</code></pre></li>
+      <li>Skanery: <code>osv-scanner</code> i <code>gitleaks</code> w <code>PATH</code> albo działający docker. Bez nich raport nie sprawdzi zależności ani sekretów w historii gita. Masz workflowy GitHuba i Dockerfile, więc jeśli możesz, dołóż też <code>zizmor</code>, <code>hadolint</code> i <code>trivy</code>.</li>
+      <li>Testy: zainstaluj zależności tak, jak robisz to na co dzień, żeby testy regresyjne, które napisze skill, dało się uruchomić przez <code>pnpm test</code>. Jeśli testów jest mało, skill zapisze to jako lukę, a nie błąd.</li>
+      <li>Skill nie startuje Twojej apki i nie zmienia kodu poza katalogiem <code>.security-audit/</code>. Wynik ląduje w tym katalogu. Zanim zrobisz commit, sprawdź, że jest w <code>.gitignore</code>.</li>
+    </ul>
+
+    <h4>3. Uruchomienie</h4>
+    <p>W katalogu repo, w świeżej sesji Claude Code:</p>
+<pre><code>/security-audit --stack js</code></pre>
+    <p>Dlaczego tak: bez <code>--scope</code>, bo 90 plików to małe repo i pełny przebieg mieści się w Twoim limicie 20 USD. <code>--stack js</code> tylko przypina profil; skill i tak wykryłby go z <code>package.json</code>.</p>
+    <p>Czas: zwykle 20–35 minut. Skill pokazuje postęp. Nie przerywaj w fazie weryfikacji.</p>
+
+    <h4>4. Jeśli coś pójdzie nie tak</h4>
+    <ul>
+      <li>Koszt zbliża się do limitu: przerwij i odpisz. Dostaniesz węższy zakres, np. <code>--scope payments,ai</code>.</li>
+      <li>Błąd przy instalacji albo nieznana flaga: wklej komunikat w odpowiedzi na tego maila. Odpowiadam do 2 dni roboczych.</li>
+      <li>Testy nie przechodzą przed audytem: to nie blokuje audytu, ale wynik testów regresyjnych będzie niepełny. Napisz, jak odpalasz testy u siebie.</li>
+    </ul>
+
+    <h4>5. Co wysłać do omówienia</h4>
+    <p>Plik <code>.security-audit/report.md</code>, w odpowiedzi na tego maila. Raport zawiera ścieżki plików i fragmenty kodu. Zanim wyślesz, przejrzyj go i wytnij, czego nie chcesz pokazywać, ale bez haseł, kluczy i danych Twoich użytkowników. Nie wycinaj sekcji „Not Assessed”: bez niej nie powiem Ci, czego audyt nie sprawdził.</p>
+    <p>Omówienie dostaniesz do 3 dni roboczych od raportu.</p>
+    <p class="sign">Bartek</p>
+  </article>
+</section>
+
+<!-- 3. OMÓWIENIE -->
+<section class="part" id="omowienie" aria-labelledby="omowienie-h">
+  <p class="part-label">Krok 3 · do 3 dni roboczych od raportu</p>
+  <h2 id="omowienie-h">Omówienie raportu</h2>
+  <p class="part-intro">To główna część usługi. Nie przepisuję raportu, tylko go oceniam: które znaleziska są prawdziwe, w jakiej kolejności je naprawić, które są fałszywe i czego raport nie sprawdził. Każde znalezisko ma plik i linię z raportu.</p>
+
+  <article class="paper">
+    <h3>Omówienie audytu: Ledgerly</h3>
+    <p class="meta">4.11.2026. Raport z przebiegu 2.11.2026 (commit <code>a03d8d4</code>), skill security-audit, profil JavaScript/TypeScript (Node), całe repo bez <code>--scope</code>, koszt 12,80 USD i 22 minuty. Przygotował Bartek Filipiuk na podstawie raportu, bez dostępu do kodu.</p>
+
+    <h4>1. W jednym akapicie</h4>
+    <p>Raport ma 40 znalezisk. 38 uznaję za prawdziwe, jedno za fałszywy alarm, a jednego nie rozstrzygnę bez Twojej odpowiedzi. Na dziś zostawiam 16 znalezisk w czterech paczkach: sekrety, które już są poza Twoją kontrolą, i dziury, które wykorzysta ktoś z darmowym kontem, a część nawet bez konta. Zacznij od wymiany kluczy, to kwestia minut, potem webhook Stripe. Najgroźniej w raporcie wygląda workflow podglądów pull requestów (oznaczony jako krytyczny), ale przy prywatnym repo to robota na ten miesiąc, nie na dziś. Audyt nie sprawdził zależności i nie uruchomił ani jednego testu, więc każda poprawka zaczyna się od testu, który ma paść. W tym tygodniu: paczki A–D poniżej, w tej kolejności.</p>
+
+    <h4>2. Napraw dziś</h4>
+    <p class="small">Klucz do tej sekcji: sekrety i kod, które już są poza Twoją kontrolą, oraz błędy, które wykorzysta ktoś bez konta albo z darmowym kontem, bez udziału ofiary. Skutek: cudze dane, Twoje pieniądze albo uprawnienia admina. Kolejność paczek: A, B, C, D. Każda paczka ma prompt dla Twojego agenta; wklej go w świeżej sesji w katalogu repo.</p>
+
+    <!-- A -->
+    <section class="pkg" aria-labelledby="pkg-a">
+      <h5 class="pkg-title" id="pkg-a"><span class="n">A</span>Klucze i skrypt instalacyjny</h5>
+      <p>Najpierw Ty, bez agenta: wymień klucz Stripe w panelu Stripe (Developers, API keys, Roll key), drugi klucz z tego samego pliku <code>.env</code> u jego wystawcy i klucz Anthropic w Anthropic Console (API keys). Dopiero potem kod.</p>
+
+      <div class="f">
+        <div class="f-head"><span class="fid">exposure-306</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Klucz Stripe i drugi klucz API w historii gita</div>
+        <div class="where">.env w commicie a1b7c73 (usunięty z drzewa, został w historii)</div>
+        <p>Wyciek jest pewny: gitleaks znalazł oba w historii, a każdy klon repo je ma. Czy klucz Stripe jest aktywny i czy to klucz live, raport celowo nie sprawdzał; zobaczysz to tylko w panelu Stripe. Wymiana kosztuje minuty, więc nie czekaj na tę odpowiedź.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">exposure-305</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Klucz API Anthropic trafia do przeglądarki</div>
+        <div class="where">src/lib/ai-client.ts:3-6</div>
+        <p>Zmienna z prefiksem <code>NEXT_PUBLIC_</code> z definicji ląduje w JavaScripcie strony, więc każdy, kto założy konto i otworzy asystenta, może ją skopiować i wydawać z Twojego konta.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">config-302</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">postinstall pobiera skrypt z internetu i uruchamia go w powłoce</div>
+        <div class="where">package.json:14</div>
+        <p>Kto przejmie tamten serwer albo domenę, uruchomi swój kod na każdej instalacji: u Ciebie, w CI i w obrazie produkcyjnym. Usunięcie to jedna linia.</p>
+      </div>
+
+      <details>
+        <summary>Prompt naprawy dla agenta (paczka A)<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9e2a12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+<pre class="wrap-text"><code>Naprawiamy trzy znaleziska z .security-audit/report.md, w tej kolejności. Klucze u dostawców już wymieniłem, Ty zajmij się kodem. Przy każdym punkcie najpierw test, potem poprawka.
+
+1. exposure-305, src/lib/ai-client.ts:3-6. Przenieś .security-audit/tests/exposure-305.browser-key.test.ts do testów projektu i uruchom pnpm test. Test MUSI paść na obecnym kodzie; jeśli przechodzi, popraw test, nie kod. Potem usuń src/lib/ai-client.ts i NEXT_PUBLIC_ANTHROPIC_API_KEY z .env.example, a podpowiedź przypomnienia z src/components/assistant-panel.tsx przenieś do server action za requireOrg(), która używa serwerowego ANTHROPIC_API_KEY. Uruchom pnpm test: nowy test przechodzi.
+
+2. config-302, package.json:14. Przenieś .security-audit/tests/config-302.postinstall.test.ts, uruchom: MUSI paść. Usuń skrypt postinstall. Jeśli to narzędzie jest potrzebne do budowania, zatrzymaj się i zapytaj mnie, zanim cokolwiek dodasz. Test przechodzi.
+
+3. exposure-306. Nie ruszaj historii gita. Dodaj do .github/workflows/ci.yml krok gitleaks, który blokuje push z sekretem.
+
+Na koniec: pnpm test, lista zmienionych plików i diff. Nie zmieniaj niczego poza tymi miejscami.</code></pre>
+      </details>
+    </section>
+
+    <!-- B -->
+    <section class="pkg" aria-labelledby="pkg-b">
+      <h5 class="pkg-title" id="pkg-b"><span class="n">B</span>Webhook Stripe bez podpisu</h5>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-101</span><span class="sev">critical</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Webhook Stripe przyjmuje niepodpisane zdarzenia</div>
+        <div class="where">src/app/api/webhooks/stripe/route.ts:6-41</div>
+        <p>Nikt nie sprawdza podpisu, więc każdy, bez konta, może zmienić zapis subskrypcji dowolnej organizacji: aktywować plan albo go anulować. Raport pokazuje, że w tym samym repo webhook Resend sprawdza podpis poprawnie, więc wzorzec już masz. README obiecuje weryfikację, której nie ma.</p>
+      </div>
+      <details>
+        <summary>Prompt naprawy dla agenta (paczka B)<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9e2a12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+<pre class="wrap-text"><code>Naprawiamy auth-101 z .security-audit/report.md: webhook Stripe w src/app/api/webhooks/stripe/route.ts:6-41 nie sprawdza podpisu.
+
+Najpierw test: przenieś .security-audit/tests/auth-101.stripe-webhook-signature.test.ts do testów projektu i uruchom pnpm test. Test MUSI paść na obecnym kodzie. Jeśli przechodzi, test niczego nie sprawdza: popraw test, nie kod.
+
+Poprawka: czytaj surowe body przez request.text(), weryfikuj je przez stripe.webhooks.constructEvent z nagłówkiem stripe-signature i STRIPE_WEBHOOK_SECRET i zwracaj 400 przy błędzie, zanim cokolwiek zapiszesz. Plan przyjmuj tylko z listy znanych planów (pro, team). Wzorzec weryfikacji przed zapisem jest w src/app/api/webhooks/resend/route.ts. Popraw też zdanie o weryfikacji webhooków w README.md, jeśli po zmianie nadal się nie zgadza.
+
+Uruchom pnpm test: nowy test przechodzi, reszta bez zmian. Pokaż diff.</code></pre>
+      </details>
+    </section>
+
+    <!-- C -->
+    <section class="pkg" aria-labelledby="pkg-c">
+      <h5 class="pkg-title" id="pkg-c"><span class="n">C</span>Rola admina i panel statystyk</h5>
+      <p>Kolejność ma znaczenie: poprawka auth-103 sprawdza rolę admina, a dziś tę rolę może sobie nadać każdy (auth-104). Najpierw auth-104.</p>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-104</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Rolę admina platformy użytkownik może ustawić sobie sam</div>
+        <div class="where">src/lib/auth.ts:27-32</div>
+        <p>Pole <code>role</code> w dodatkowych polach Better-Auth nie ma <code>input: false</code>, a według dokumentacji biblioteki takie pole przyjmuje wartość z rejestracji. Raport opiera to na dokumentacji, bo nie czytał kodu biblioteki; test z paczki rozstrzygnie to na Twojej wersji.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-103</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">/api/admin/stats bez logowania: liczby platformy i e-maile 25 ostatnich rejestracji</div>
+        <div class="where">src/app/api/admin/stats/route.ts:5-25</div>
+        <p>Sprawdzenie admina jest tylko na stronie <code>/admin</code>, a matcher w <code>proxy.ts</code> nie obejmuje <code>/api/admin</code>. Endpoint odpowiada każdemu z internetu.</p>
+      </div>
+      <details>
+        <summary>Prompt naprawy dla agenta (paczka C)<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9e2a12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+<pre class="wrap-text"><code>Dwie poprawki z .security-audit/report.md, w tej kolejności, bo druga opiera się na pierwszej. Przy każdej najpierw test, który MUSI paść na obecnym kodzie; jeśli przechodzi, popraw test, nie kod.
+
+1. auth-104, src/lib/auth.ts:27-32. Przenieś .security-audit/tests/auth-104.role-not-client-writable.test.ts do testów projektu, uruchom pnpm test: ma paść. Ustaw input: false dla role (i dla emailDigest, jeśli ma się zmieniać tylko w ustawieniach). Rolę admina nadawaj tylko po stronie serwera. W requireAdmin (src/lib/session.ts:22-25) czytaj rolę z bazy, nie z sesji. Test przechodzi.
+
+2. auth-103, src/app/api/admin/stats/route.ts:5-25. Przenieś .security-audit/tests/auth-103.admin-stats-auth.test.ts, uruchom: ma paść. Dodaj w samym handlerze sprawdzenie sesji i roli admina: 401 bez sesji, 403 bez roli. Nie polegaj na proxy.ts ani na stronie /admin. Test przechodzi.
+
+Na koniec pnpm test i diff. Nie zmieniaj niczego poza tymi plikami.</code></pre>
+      </details>
+      <p class="small">Po wdrożeniu sprawdź w bazie, czy w tabeli <code>user</code> ktoś poza Tobą ma rolę <code>admin</code>. Jeśli tak, ktoś mógł ją sobie nadać.</p>
+    </section>
+
+    <!-- D -->
+    <section class="pkg" aria-labelledby="pkg-d">
+      <h5 class="pkg-title" id="pkg-d"><span class="n">D</span>Granica między organizacjami</h5>
+      <p>Jedna przyczyna, dziesięć znalezisk: organizacja albo id rekordu przychodzi z requestu lub od modelu i nikt nie sprawdza, czy należy do zalogowanego użytkownika. To dokładnie to, o co pyta Twój klient. Raport składa te miejsca w dwa łańcuchy (chain-901 i chain-902): publiczna strona projektu zdradza id organizacji, projektu i klucze plików, a pozostałe miejsca te id przyjmują. Zacznij od exposure-101, bo ta jedna poprawka przerywa pierwszy krok obu łańcuchów, ale napraw wszystkie, bo każde miejsce osobno też jest dziurą.</p>
+
+      <div class="f">
+        <div class="f-head"><span class="fid">exposure-101</span><span class="sev">medium</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Publiczna strona projektu wysyła anonimom cały wiersz projektu</div>
+        <div class="where">src/app/p/[slug]/page.tsx:7-12</div>
+        <p>Strona pokazuje tylko nazwę i opis, ale do komponentu klienckiego idzie cały rekord: notatki wewnętrzne, budżet, e-mail kontaktowy, id organizacji i klucze plików. Raport daje medium, ja daję dziś, bo to otwiera oba łańcuchy.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-107</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Eksport klientów bierze organizację z parametru <code>?org=</code></div>
+        <div class="where">src/app/api/export/route.ts:6-23</div>
+        <p>Każde zalogowane konto, także świeże i bez organizacji, pobierze listę klientów cudzej organizacji z e-mailem, telefonem i NIP-em. Razem z exposure-101 to chain-901.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-106</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Narzędzie AI searchInvoices przyjmuje id organizacji od modelu</div>
+        <div class="where">src/server/ai/tools.ts:7-36</div>
+        <p>Jedyną granicą jest zdanie w prompcie systemowym, a prompt nie jest zabezpieczeniem. To, czy model posłucha, nie ma znaczenia: narzędzie w ogóle nie powinno przyjmować organizacji.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">chain-901</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Łańcuch: publiczna strona projektu, eksport klientów i wyszukiwanie faktur</div>
+        <div class="where">src/app/p/[slug]/page.tsx:7-12</div>
+        <p>Nie osobna poprawka, tylko suma exposure-101, auth-107 i auth-106. Zamyka się razem z nimi.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">upload-401</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Klucz pliku przy uploadzie wybiera klient, bez prefiksu organizacji</div>
+        <div class="where">src/app/api/uploads/route.ts:13,23-37</div>
+        <p>Członek dowolnej organizacji może nadpisać albo odczytać cudzy plik w buckecie, jeśli zna jego klucz, a klucze plików z publicznych projektów zdradza exposure-101.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-403</span><span class="sev">medium</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Upload przyjmuje dowolny projectId</div>
+        <div class="where">src/app/api/uploads/route.ts:10,29-37</div>
+        <p>Ta sama trasa co upload-401, ta sama poprawka: przed podpisaniem sprawdź, że projekt należy do organizacji z sesji.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-108</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">tRPC project.update zmienia projekt po samym id</div>
+        <div class="where">src/server/trpc/routers/project.ts:12-27</div>
+        <p>Członek innej organizacji może przepisać cudzy projekt, przełączyć go na publiczny i odczytać notatki wewnętrzne z odpowiedzi. Sąsiednia procedura list w tym samym routerze filtruje po organizacji poprawnie.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">chain-902</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Łańcuch: publiczna strona, upload i edycja projektu</div>
+        <div class="where">src/app/p/[slug]/page.tsx:7-12</div>
+        <p>Suma exposure-101, upload-401, auth-403 i auth-108. Skutek, którego najbardziej bym się bał: podmiana pliku, który członkowie cudzej organizacji potem pobierają jako swój.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-102</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Server action getInvoice bez logowania i bez organizacji</div>
+        <div class="where">src/app/(app)/invoices/actions.ts:1,10-15</div>
+        <p>Akcja jest importowana przez komponent kliencki, więc jest publicznym endpointem. Funkcja obok w tym samym pliku wywołuje <code>requireOrg()</code>, ta nie. Ryzyko trochę zmniejsza to, że id faktur nie da się zgadnąć z samego kodu.</p>
+      </div>
+      <div class="f">
+        <div class="f-head"><span class="fid">auth-105</span><span class="sev">high</span><span class="v v-true">prawdziwe</span></div>
+        <div class="what">Narzędzie AI voidInvoice anuluje fakturę dowolnej organizacji, bez potwierdzenia</div>
+        <div class="where">src/server/ai/billing-tools.ts:7-20</div>
+        <p><code>ctx.orgId</code> jest przekazywane, ale to narzędzie go nie używa. Bliźniacze narzędzie markInvoicePaid w tym samym pliku robi to dobrze i ma <code>needsApproval</code>.</p>
+      </div>
+
+      <details>
+        <summary>Prompt naprawy dla agenta (paczka D)<span class="chev" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9e2a12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+<pre class="wrap-text"><code>Naprawiamy granicę między organizacjami, znaleziska z .security-audit/report.md. Zasada dla całej paczki: organizację zawsze bierzemy z sesji, nigdy z requestu ani od modelu, a każde zapytanie o rekord organizacji ma w where orgId z sesji.
+
+Kolejność:
+1. exposure-101, src/app/p/[slug]/page.tsx:7-12: do PublicProjectView przekazuj osobny obiekt z name, description i nazwami plików, nie cały wiersz z bazy.
+2. auth-107, src/app/api/export/route.ts:6-23: ignoruj parametr org, używaj organizacji z sesji, eksport tylko dla roli owner albo admin.
+3. auth-106, src/server/ai/tools.ts:7-36: usuń orgId ze schematu wejścia searchInvoices, używaj ctx.orgId.
+4. upload-401 i auth-403, src/app/api/uploads/route.ts:13,23-37 oraz :10,29-37: klucz pliku generuje serwer w postaci orgId/projectId/uuid, klucz od klienta ignoruj; przed podpisaniem sprawdź, że projectId należy do organizacji z sesji, inaczej 404.
+5. auth-108, src/server/trpc/routers/project.ts:12-27: update z warunkiem na id i ctx.orgId, jawna lista zwracanych kolumn, zmiana isPublic tylko dla owner albo admin.
+6. auth-102, src/app/(app)/invoices/actions.ts:1,10-15: requireOrg() i warunek na orgId, tak jak w invoice.byId.
+7. auth-105, src/server/ai/billing-tools.ts:7-20: warunek na ctx.orgId, needsApproval: true, narzędzie tylko dla owner albo admin.
+
+Przy każdym punkcie osobno: najpierw test. Jeśli w .security-audit/tests/ jest test dla tego id (są dla auth-102, auth-105, auth-106, auth-107, auth-108 i upload-401), przenieś go do testów projektu. Jeśli nie ma, napisz test, który wywołuje kod z id rekordu innej organizacji i sprawdza, że nie dostaje ani nie zmienia cudzych danych. Uruchom pnpm test: nowy test MUSI paść na obecnym kodzie; jeśli przechodzi, popraw test, nie kod. Dopiero potem poprawka i pnpm test na zielono. Jeden commit na punkt.
+
+Nie zmieniaj niczego poza tymi miejscami. Jeśli poprawka wymaga zmiany gdzie indziej, zatrzymaj się i zapytaj.</code></pre>
+      </details>
+    </section>
+
+    <h4>3. Napraw w tym miesiącu</h4>
+    <p class="small">Prawdziwe, ale wymagają warunku: zalogowany użytkownik musi wejść na obcą stronę, coś musi działać na produkcji albo skutek to koszt, a nie wyciek. Kolejność od góry.</p>
+    <ul class="rows">
+      <li><div class="what">auth-110 i auth-111: CORS odbija każdy Origin, a ciasteczko sesji ma SameSite=None</div><div class="where">src/server/api/index.ts:13-36 · src/lib/auth.ts:36</div><p>Wymaga, żeby zalogowany użytkownik wszedł na obcą stronę, a część przeglądarek i tak nie wyśle ciasteczka. Naprawa: lista dozwolonych originów, SameSite=Lax, sprawdzanie Origin w route handlerach, które coś zmieniają.</p></li>
+      <li><div class="what">injection-203: odbiornik postMessage bez sprawdzenia nadawcy przekierowuje na adres z wiadomości</div><div class="where">src/components/payment-method-frame.tsx:13-22</div><p>Też wymaga wizyty na obcej stronie, ale skutek jest poważny: skrypt w Twojej domenie. Naprawa: sprawdzaj event.origin i event.source tak jak src/components/signature-frame.tsx:22-25.</p></li>
+      <li><div class="what">config-308: brak nagłówków frame-ancestors, COOP i CSP</div><div class="where">next.config.ts:3-13</div><p>Sam nie jest dziurą, ale otwiera drogę injection-203. Naprawa: headers() w next.config.ts.</p></li>
+      <li><div class="what">auth-109: cotygodniowy digest zaległych faktur idzie do wszystkich użytkowników platformy</div><div class="where">src/server/jobs/digest.ts:28-43</div><p>Działa tylko, jeśli na produkcji chodzi proces worker (pytanie 2 niżej). Jeśli chodzi, przenieś na dziś. Naprawa: odbiorcy tylko z członków danej organizacji.</p></li>
+      <li><div class="what">config-301: workflow podglądów buduje kod z pull requesta z sekretami</div><div class="where">.github/workflows/preview.yml:3-5,7-9,15-32</div><p>Raport daje critical, ale warunkiem są pull requesty od osób z zewnątrz, a Twoje repo jest prywatne. Jeśli je otworzysz albo wpuścisz zewnętrznego współpracownika, przenieś na dziś. Naprawa: build w zwykłym pull_request bez sekretów, wdrożenie podglądu osobno, za zatwierdzeniem.</p></li>
+      <li><div class="what">config-307: Dockerfile zapisuje sekrety produkcyjne w obrazie</div><div class="where">Dockerfile:14-22</div><p>Skutek zależy od tego, kto może pobrać obraz (pytanie 3). Naprawa: usuń ARG i ENV z sekretami, wstrzykuj je przy starcie kontenera i wymień te, które już były w wypchniętym obrazie.</p></li>
+      <li><div class="what">injection-202: testWebhook pobiera dowolny URL i zwraca odpowiedź</div><div class="where">src/server/trpc/routers/integration.ts:18-28</div><p>Prawdziwe, ale skutek zależy od hostingu (pytanie 3). Naprawa: tylko https, blokada adresów lokalnych i prywatnych, bez śledzenia przekierowań, zwracaj sam status.</p></li>
+      <li><div class="what">rate-limit-102: wysyłka kodu SMS bez logowania i bez limitu</div><div class="where">src/app/api/phone/send-code/route.ts:7-22</div><p>Nic nie wycieka, ale każde wywołanie kosztuje. Dziś ustaw alert wydatków u dostawcy SMS. Naprawa: limit na numer i adres IP, CAPTCHA, lista dozwolonych krajów.</p></li>
+      <li><div class="what">rate-limit-101: model, limit tokenów i liczbę kroków asystenta wybiera request</div><div class="where">src/app/api/assistant/billing/route.ts:6-22</div><p>Koszt, nie wyciek. Naprawa: walidacja body przez zod, model ustawiony na serwerze, górne limity i budżet na organizację.</p></li>
+      <li><div class="what">rate-limit-103: wywołania modelu bez budżetu na organizację (3 miejsca)</div><div class="where">src/app/api/chat/route.ts:11-19</div><p>Koszt pojedynczego wywołania jest ograniczony, liczba wywołań nie. Ten sam licznik co przy rate-limit-101.</p></li>
+      <li><div class="what">rate-limit-411: zaproszenia do zespołu bez limitu</div><div class="where">src/app/api/team/invite/route.ts:14-41</div><p>Grozi reputacji domeny nadawczej, a z nią mailom weryfikacyjnym. Naprawa: dzienny limit na organizację i brak duplikatów.</p></li>
+      <li><div class="what">upload-402: podpisany upload bez limitu rozmiaru i typu pliku</div><div class="where">src/app/api/uploads/route.ts:9-14,23-27</div><p>Koszt przechowywania. Naprawa przy okazji paczki D: lista typów i ContentLength w podpisie.</p></li>
+      <li><div class="what">auth-113: cache zużycia bez organizacji w kluczu</div><div class="where">src/server/queries/dashboard.ts:20-33</div><p>Pokazuje cudze sumy zużycia przez 10 minut; to dane zbiorcze, nie osobowe. Naprawa: orgId jako argument funkcji w cache.</p></li>
+      <li><div class="what">exposure-415: usunięcie organizacji zostawia jej pliki w buckecie</div><div class="where">src/app/(app)/settings/organization/actions.ts:9-22</div><p>Ważne dla obietnicy usuwania danych, nie dla ataku. Naprawa: usuń obiekty przed usunięciem wiersza albo zadaniem w tle.</p></li>
+      <li><div class="what">injection-201: HTML od modelu renderowany przez dangerouslySetInnerHTML <span class="v v-unknown">nie rozstrzygnę bez Twojej odpowiedzi</span></div><div class="where">src/app/(app)/invoices/[id]/summary/page.tsx:23-37</div><p>Raport sam zaznacza, że w repo nie ma kodu, który zapisuje notatki faktur, więc nie wiem, kto je pisze (pytanie 1). Naprawa jest tania niezależnie od odpowiedzi: renderuj odpowiedź modelu jako tekst.</p></li>
+      <li><div class="what">injection-212: pola użytkownika wstawiane do HTML maili bez escapowania</div><div class="where">src/lib/auth.ts:17-25</div><p>Treść i linki w mailu z Twojej domeny, bez wykonania skryptu. Naprawa: istniejący helper escapeHtml w obu szablonach.</p></li>
+      <li><div class="what">concurrency-405: webhook Stripe bez idempotencji</div><div class="where">src/app/api/webhooks/stripe/route.ts:7-38</div><p>Zostaje po paczce B. Naprawa: zapisuj event.id z unikalnym indeksem i pomijaj powtórki.</p></li>
+      <li><div class="what">concurrency-410: startCheckout bez sprawdzenia istniejącej subskrypcji, dla każdego członka</div><div class="where">src/app/(app)/settings/billing/actions.ts:10-22</div><p>Wymaga drugiej zapłaconej subskrypcji. Naprawa: tylko owner i admin, przy aktywnej subskrypcji portal klienta zamiast checkoutu.</p></li>
+      <li><div class="what">business-logic-101: dowolne przejścia statusu faktury</div><div class="where">src/app/(app)/invoices/actions.ts:19-27</div><p>W obrębie własnej organizacji. Naprawa: warunek na obecny status w tym samym zapytaniu.</p></li>
+      <li><div class="what">injection-213: przekierowanie po logowaniu da się wyprowadzić poza domenę</div><div class="where">src/components/login-form.tsx:18-19</div><p>Pomaga w phishingu, nic nie wycieka. Naprawa: porównanie origin przez new URL.</p></li>
+    </ul>
+
+    <h4>4. Zignoruj albo zaakceptuj świadomie</h4>
+    <ul class="rows">
+      <li><div class="what">rate-limit-408: sendAiReminder bez limitu <span class="v v-false">prawdopodobnie fałszywy alarm</span></div><div class="where">src/app/(app)/invoices/[id]/summary/actions.ts:15-36</div><p>Brak limitu to fakt, ale to nie podatność. Adresat to klient Twojej organizacji z bazy, a zapytanie filtruje po organizacji z sesji. Treść od modelu jest escapowana, co raport sam potwierdza w sekcji bezpiecznych miejsc. Członek organizacji i tak może pisać do własnych klientów. Problemem byłoby to dopiero wtedy, gdyby adresata wybierał użytkownik albo model.</p></li>
+      <li><div class="what">injection-207: eksport CSV nie neutralizuje formuł arkusza <span class="v v-true">prawdziwe, zaakceptuj</span></div><div class="where">src/app/api/export/route.ts:26-28,38-40</div><p>Ktoś musiałby wpisać formułę w dane klienta, a w repo nie ma kodu, który te dane zapisuje. Arkusze ostrzegają przed treścią zewnętrzną. Wróć do tego, jeśli Twoi użytkownicy będą sami wpisywać dane swoich klientów.</p></li>
+      <li><div class="what">logging-309: brak logów zdarzeń bezpieczeństwa <span class="v v-true">prawdziwe, zaakceptuj na teraz</span></div><div class="where">src/server/jobs/worker.ts:23-26</div><p>Nic nie otwiera, ale po incydencie nie odtworzysz, co się stało. Rozsądne do startu płatnych planów; wróć, gdy będziesz wdrażać monitoring.</p></li>
+    </ul>
+    <p class="aside"><strong>Poza omówieniem:</strong> w kluczu odpowiedzi aplikacji testowej miejsce z rate-limit-408 jest celową pułapką na fałszywy alarm. To jedyna pułapka, w którą wpadł ten przebieg.</p>
+
+    <h4>5. Co raport potwierdził jako bezpieczne</h4>
+    <p>Do rozmowy z Twoim klientem, po naprawie paczki D. Każde z miejscem w kodzie z raportu:</p>
+    <ul>
+      <li>webhook Resend sprawdza podpis na surowym body przed jakąkolwiek zmianą: <code>src/app/api/webhooks/resend/route.ts:9-21</code>;</li>
+      <li>klucze API są przechowywane jako hash i porównywane w stałym czasie: <code>src/server/api/keys.ts:6-19</code>;</li>
+      <li>pobranie dokumentu wymaga rekordu z Twojej organizacji, a link wygasa po 60 sekundach: <code>src/app/api/documents/[id]/download/route.ts:15-30</code>;</li>
+      <li>usunięcie danych klienta anonimizuje je w jednej transakcji i tylko dla owner albo admin: <code>src/app/(app)/customers/actions.ts:12-40</code>;</li>
+      <li>dzienny limit SMS na organizację liczony pod blokadą, bez podwójnych wysyłek: <code>src/app/(app)/invoices/[id]/sms-actions.ts:23-36</code>.</li>
+    </ul>
+
+    <h4>6. Czego audyt nie objął</h4>
+    <ul>
+      <li><strong>Zależności.</strong> osv-scanner i docker były niedostępne, a zapasowy <code>pnpm audit</code> się wysypał. „No vulnerable packages reported” znaczy tu „nie sprawdzono”, nie „czysto”. Puść <code>osv-scanner</code> na <code>pnpm-lock.yaml</code> jeszcze w tym tygodniu, to kilka minut.</li>
+      <li><strong>Testy.</strong> Żaden test nie został uruchomiony: nie było <code>node_modules</code>, a skill celowo nie instalował zależności, bo instalacja uruchomiłaby skrypt z config-302. Wszystkie znaleziska potwierdzono czytaniem kodu. Dlatego każdy prompt wyżej zaczyna się od testu, który ma paść.</li>
+      <li><strong>Skanery reguł.</strong> semgrep, zizmor, hadolint i trivy nie ruszyły. Workflowy i Dockerfile czytał tylko model. Warto dorobić po paczce A.</li>
+      <li><strong>Kod bibliotek.</strong> Które endpointy pluginu organizacji w Better-Auth wymagają jakiej roli, czy ciasteczko sesji ma HttpOnly i jak tRPC traktuje content-type przy żądaniach z innej strony: raport nie mógł tego przeczytać. Ciasteczko sprawdzisz w devtools po zalogowaniu.</li>
+      <li><strong>Infrastruktura.</strong> Polityka bucketu R2, nagłówki i HSTS dodawane przez hosting, kopie zapasowe, logi wysyłek w Resend. Sekcja „Production checklist” w raporcie mówi, jak sprawdzić każdą z tych rzeczy u siebie.</li>
+    </ul>
+    <p class="aside"><strong>Poza omówieniem:</strong> w Ledgerly zasialiśmy 26 błędów, a ten przebieg znalazł 25. Brakujący to podatna wersja Next.js, czyli dokładnie to, czego nie dało się znaleźć bez skanera zależności. Dlatego ta sekcja jest w każdym omówieniu.</p>
+
+    <h4>7. Co wpiąć w CI</h4>
+    <p>Do <code>.github/workflows/ci.yml</code>: <code>osv-scanner</code> na lockfile i <code>gitleaks</code> na każdym pull requeście, oba blokujące. Testy z <code>.security-audit/tests/</code>, które przeniesiesz przy paczkach A–D, lądują w zwykłym <code>pnpm test</code>, więc CI pilnuje, żeby poprawki nie wróciły. Po większej zmianie odpal lokalnie <code>/security-audit --since last</code>: skill sprawdzi tylko to, co się zmieniło, i pokaże, co zamknąłeś, a co wróciło. To ten sam raport, który odsyłasz mi do sprawdzenia poprawek.</p>
+
+    <h4>8. Pytania do Ciebie</h4>
+    <ol>
+      <li>injection-201: kto i skąd wpisuje notatki faktur i opisy pozycji (formularz, import, API poza tym repo)? Od tego zależy, czy to jest dziura, czy tylko zła praktyka.</li>
+      <li>auth-109: czy proces <code>worker</code> działa na produkcji? Jeśli tak, przenoszę auth-109 na dziś.</li>
+      <li>config-307 i injection-202: gdzie stoi produkcja i czy obraz Dockera trafia do rejestru, do którego ma dostęp ktoś poza Tobą?</li>
+    </ol>
+
+    <h4>9. Co dalej</h4>
+    <p>Na Twoim miejscu zrobiłbym w tym tygodniu paczki A–D, puścił osv-scanner i przysłał mi raport z <code>--since last</code>: sprawdzę, czy znaleziska z sekcji „Napraw dziś” są zamknięte. Jeśli chcesz, żebym wziął paczkę D i wpiął bramkę w CI u Ciebie, odpisz, wycenię po tym raporcie.</p>
+    <p class="sign">Bartek</p>
+  </article>
+</section>
+
+<section class="report-link" aria-labelledby="raport-h">
+  <h2 id="raport-h">Pełny raport, z którego powstało to omówienie</h2>
+  <p>40 znalezisk z kodem i przepływem danych, 30 miejsc potwierdzonych jako bezpieczne i 19 rzeczy, których audyt nie ocenił. Raport jest po angielsku, tak jak go zapisuje skill.</p>
+  <p><a href="https://security-audit.dev/raporty/ledgerly.html" rel="noopener">security-audit.dev/raporty/ledgerly.html</a></p>
+  <div class="actions">
+    <a class="btn btn-lg" href="../#zamow" data-umami-event="audyt-przyklad-cta-bottom">Zamów audyt z omówieniem · 590 zł</a>
+    <a href="../">Wróć do oferty</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Bartłomiej Filipiuk Devins · NIP 596 158 99 01 · <a href="mailto:bartek@devince.dev">bartek@devince.dev</a></p>
+    <nav aria-label="Dokumenty">
+      <a href="../">Audyt z omówieniem</a>
+      <a href="../../">Sprint bezpieczeństwa</a>
+      <a href="../../regulamin.html#audyt">Regulamin</a>
+      <a href="../../polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="https://github.com/bartek-filipiuk/security-audit-skill" rel="noopener">Skill na GitHubie</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
