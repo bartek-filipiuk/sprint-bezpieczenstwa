@@ -300,3 +300,12 @@ footer a { color: var(--ink-2); display: inline-block; padding: 12px 0; }
 }
 .lm-teaser { margin-top: 20px; font-size: 16px; color: var(--ink-2); }
 .lm-teaser a { font-weight: 600; }
+
+/* "Co dostajesz": oversized signal-red numerals carry the list */
+.gets { padding-top: 24px; }
+.gets-list { list-style: none; counter-reset: gets; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px 48px; }
+.gets-list li { counter-increment: gets; display: grid; grid-template-columns: 56px 1fr; align-content: start; column-gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+.gets-list li::before { content: counter(gets); grid-row: span 2; font-size: 44px; line-height: 0.9; font-weight: 800; letter-spacing: -0.04em; color: var(--signal); }
+.gets-list h3 { font-size: 18px; line-height: 1.3; font-weight: 800; }
+.gets-list p { margin-top: 6px; font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+@media (max-width: 640px) { .gets-list li { grid-template-columns: 40px 1fr; } .gets-list li::before { font-size: 36px; } }

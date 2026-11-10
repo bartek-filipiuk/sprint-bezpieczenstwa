@@ -84,9 +84,9 @@
       <p>Wszystko pisemnie, mailem. Ty decydujesz, kiedy odpalisz audyt; terminy po mojej stronie liczę od Twojej wiadomości.</p>
     </div>
     <ol class="prestart" aria-label="Przebieg usługi">
-      <li><p class="pre-when">w dniu zakupu</p><h3>Dostajesz start</h3><p>Instrukcję instalacji skilla, przykładową kartę i przykładowe omówienie, checklistę z promptem do mapy apki i link do formularza.</p></li>
+      <li><p class="pre-when">w dniu zakupu</p><h3>Dostajesz start</h3><p>Instrukcję instalacji skilla, przykładową kartę i przykładowe omówienie, checklistę z promptem do mapy apki, link do formularza i skill deps-check do sprawdzenia zależności.</p></li>
       <li><p class="pre-when">10 minut</p><h3>Opisujesz swoją apkę</h3><p>Osiem pytań: po co Ci audyt, stack, wielkość repo, co ma najwięcej do stracenia, narzędzie i limit kosztu.</p></li>
-      <li><p class="pre-when">do 2 dni roboczych</p><h3>Dostajesz kartę uruchomienia</h3><p>Komendę z flagami pod Twój stack, zakres dla dużego repo, szacowany koszt i listę miejsc, na które patrzę w Twoim frameworku.</p></li>
+      <li><p class="pre-when">do 2 dni roboczych</p><h3>Dostajesz kartę uruchomienia</h3><p>Komendę z flagami pod Twój stack, zakres dla dużego repo, szacowany koszt, listę miejsc, na które patrzę w Twoim frameworku, i oficjalne źródła informacji o podatnościach dla Twojego stacku.</p></li>
       <li><p class="pre-when">kiedy chcesz</p><h3>Odpalasz audyt u siebie</h3><p>Skill czyta Twój kod na Twojej maszynie i zapisuje raport w katalogu repo. Odsyłasz mi raport, możesz z niego wyciąć fragmenty.</p></li>
       <li><p class="pre-when">do 3 dni roboczych</p><h3>Dostajesz omówienie</h3><p>Które znaleziska są prawdziwe, co naprawić dziś, co poczeka, które alarmy są fałszywe i dlaczego, prompty do napraw dla Twojego agenta i czego raport nie objął.</p></li>
       <li><p class="pre-when">przez 30 dni</p><h3>Pytasz i sprawdzamy poprawki</h3><p>Jedna wiadomość z maksymalnie 5 pytaniami do omówienia i jedno sprawdzenie poprawek na raporcie z samych zmian.</p></li>
@@ -97,6 +97,24 @@
       <div><strong>Pisemnie, bez rozmów</strong><p>Dlatego taka cena. Szkic omówienia przygotowuje model AI (Claude) na moim koncie, a ja go sprawdzam, poprawiam i podpisuję.</p></div>
       <div><strong>Tokeny na Twoim planie</strong><p>Claude Code albo OpenCode z wybranym modelem. Na subskrypcji przebieg zużywa limit planu, bez dopłat. Przez API pełny przebieg w naszych testach kosztował 1,5–18 USD, a karta mówi, ile wyjdzie u Ciebie.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="gets" id="co-dostajesz">
+  <div class="wrap">
+    <div class="program-head">
+      <h2 class="h-section">Wiesz, co naprawić najpierw, i masz czym pilnować apki dalej</h2>
+      <p>Wszystko dostajesz na piśmie albo jako plik, który zostaje u Ciebie.</p>
+    </div>
+    <ol class="gets-list">
+      <li><h3>Zaczynasz w dniu zakupu.</h3><p>Instrukcja instalacji skilla, przykładowa karta i omówienie, checklista z promptem do mapy apki i formularz.</p></li>
+      <li><h3>Jeszcze tego samego dnia wiesz, które paczki zaktualizować.</h3><p>Gotowy skill deps-check do Claude Code i OpenCode mówi, które zależności mają znane podatności, do jakiej wersji je podnieść i jaką komendą. Po aktualizacji uruchamiasz go drugi raz i widzisz, co zniknęło. Działa też bez agenta, bez tokenów.</p></li>
+      <li><h3>Nie zgadujesz, jak odpalić audyt ani ile wydasz.</h3><p>Karta uruchomienia pod Twój stack: komenda z flagami, zakres dla dużego repo, szacowany koszt i miejsca, na które patrzę w Twoim frameworku. Do 2 dni roboczych.</p></li>
+      <li><h3>Wiesz, gdzie Twój stack ogłasza podatności.</h3><p>W karcie oficjalne źródła dla Twojego frameworka i bibliotek, sposób ustawienia powiadomień tam, gdzie projekt je ma, i jedno ustawienie do zrobienia od razu.</p></li>
+      <li><h3>Nie naprawiasz tego, co nie jest dziurą.</h3><p>Pisemne omówienie raportu: co jest prawdziwe, co naprawić dziś, co poczeka, które alarmy są fałszywe i dlaczego, czego audyt nie objął. Do 3 dni roboczych.</p></li>
+      <li><h3>Naprawiasz z agentem.</h3><p>Prompty napraw ułożone w paczki. Tam, gdzie da się to sprawdzić testem, prompt każe agentowi najpierw napisać test, który pada przed poprawką.</p></li>
+      <li><h3>Nie zostajesz sam po omówieniu.</h3><p>Przez 30 dni jedna wiadomość z maksymalnie 5 pytaniami i jedno sprawdzenie poprawek na raporcie z samych zmian.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -172,8 +190,8 @@
     <div>
       <h2 class="h-section">Zamów audyt z omówieniem</h2>
       <ul class="incl">
-        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>start w dniu zakupu: instrukcja, przykłady, checklista, formularz</li>
-        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>karta uruchomienia pod Twój stack, do 2 dni roboczych</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>start w dniu zakupu: instrukcja, przykłady, checklista, formularz i skill deps-check</li>
+        <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>karta uruchomienia pod Twój stack ze źródłami informacji o podatnościach, do 2 dni roboczych</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>pisemne omówienie raportu, do 3 dni roboczych</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>do 5 pytań i jedno sprawdzenie poprawek przez 30 dni</li>
         <li><svg class="icon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a7d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>miejsce w Sprincie bezpieczeństwa 11–22.01.2027</li>
