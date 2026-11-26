@@ -4,7 +4,7 @@
 .doc { width: min(100% - 32px, 52rem); margin: 40px auto 72px; }
 @media (min-width: 720px) { .doc { width: min(100% - 48px, 52rem); margin-top: 56px; } }
 
-.doc h1 { font-size: clamp(32px, 4.4vw, 50px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 850; }
+.doc h1 { margin-top: 12px; font-size: clamp(32px, 4.4vw, 50px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 850; }
 .doc .lede { margin-top: 20px; font-size: clamp(18px, 1.6vw, 20px); line-height: 1.5; color: var(--ink-2); }
 
 .sample-note { margin-top: 28px; padding: 16px 20px; border-left: 4px solid var(--signal); border-radius: 0 12px 12px 0; background: var(--signal-tint); font-size: 16px; line-height: 1.55; }
@@ -17,7 +17,7 @@
 /* the three documents */
 .part { margin-top: 64px; padding: 0; } /* site.css pads every <section> */
 .part-label { font: 12px/1.4 var(--mono); color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
-.part > h2 { margin-top: 6px; font-size: clamp(28px, 3vw, 38px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 800; }
+.part > h2 { margin-top: 10px; font-size: clamp(28px, 3vw, 38px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 800; }
 .part-intro { margin-top: 12px; color: var(--ink-2); }
 
 .paper { margin-top: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(18px, 4vw, 40px); }
@@ -66,7 +66,7 @@
 .rows p { margin-top: 4px; font-size: 16px; color: var(--ink-2); }
 
 .paper details { margin-top: 12px; border-top: 0; }
-.paper summary { padding: 10px 0; font-size: 16px; color: var(--signal-ink); }
+.paper summary { padding: 11px 0; font-size: 16px; color: var(--signal-ink); }
 .paper details[open] summary { padding-bottom: 4px; }
 .paper details p { margin-bottom: 0; }
 
